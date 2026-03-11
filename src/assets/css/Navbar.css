@@ -1109,16 +1109,16 @@
     background: black !important;
     width: 100%;
     flex: 0 0 auto;
-    height: 30px !important;
+    height: 50px !important;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    
+    margin-top:10px !important;
   }
 
   .is-scrolled.theme-white-nav .nav-item {
     color: white !important;
-    font-size:8px !important;
+    font-size:7px !important;
   }
 
   /* Scrolled + White BG Section = Black Capsule */
@@ -1126,20 +1126,22 @@
     background: white !important;
     width: 100%;
     flex: 0 0 auto;
-    height: 30px !important;
+    height: 50px !important;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-top:10px !important;
   }
   .is-scrolled.theme-black-nav .nav-item {
     color: black !important;
-    font-size:8px !important;
+    font-size:7px !important;
   }
 
   .nav-item {
-    font-size: 8px !important; /* Chinna screen-ku etha size */
+    font-size: 7px !important; /* Chinna screen-ku etha size */
     color: #000 !important;
   }
+ 
 
   /* Scrolled State adjustments */
   .is-scrolled .nav-white-container {

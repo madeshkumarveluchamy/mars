@@ -1,13 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS inga dhaan varanum
-import Navbar from './components/common/Navbar'; // Path correct-ah check pannunga
+// import Navbar from './components/common/Navbar'; // Path correct-ah check pannunga
 import Home from './pages/Home'; // Home page kulla Hero section irukkum
 
 function App() {
   return (
     <div className="App">
       {/* Navbar universal-ah mela irukkum */}
-      <Navbar />
+      {/* <Navbar /> */}
       
       {/* Home page-kulla dhaan Hero and other sections irukkum */}
       <Home />

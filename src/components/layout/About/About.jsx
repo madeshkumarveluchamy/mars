@@ -78,7 +78,7 @@ const About = () => {
           </div>
 
 
-          <div className="col-md-3 border-end border-dark pe-5 stats-left">
+          <div className="col-md-3 pe-3 border-end border-dark stats-left">
             
             {/* 20+ Stats: 2 UP, 0 DOWN */}
             <h1 className="display-1 fw-bold mb-0 main-stat-container">
@@ -86,9 +86,9 @@ const About = () => {
               <span className="stat-suffix">+</span>
             </h1>
             
-            <p className="fw-bold letter-spacing-1">YEARS OF EXPERTISE</p>
+            <p className="fw-bold letter-spacing-1 d-flex justify-content-center">YEARS OF EXPERTISE</p>
             <div className="horizontalLine"></div>
-            <div className="mt-5 d-flex align-items-center gap-3">
+            <div className="mt-5 d-flex align-items-center justify-content-center gap-3">
               <div className="client-avatars">
                 <img src="/aboutclients.png" alt="Happy Clients" className="single-avatar-img" />
               </div>

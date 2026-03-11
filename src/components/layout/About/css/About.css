@@ -430,6 +430,7 @@
 .main-stat-container, .secondary-stat-container {
     display: flex !important;
     flex-direction: row !important;
+    justify-content:center;
     align-items: baseline !important; /* Perfect straight line force */
     line-height: 1;
 }

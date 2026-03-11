@@ -566,7 +566,7 @@
 
   .mars-text-bg{
     top:25%!important;
-    left:30% !important;
+    left:25% !important;
     width:50%!important;
     transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
   }
@@ -669,7 +669,7 @@
   }
   .mars-text-bg{
     top:35%!important;
-    left:15% !important;
+    left:10% !important;
     width:50%!important;
     transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
   }
