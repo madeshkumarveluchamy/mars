@@ -1,0 +1,123 @@
+/* Container must be relative for floating buttons */
+.gallery-content-area {
+    position: relative;
+}
+
+.gallery-section {
+    padding: 80px 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.gallery-main-title {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Image Styling */
+.gallery-img-box {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Floating Navigation Buttons Logic */
+.cinematic-nav-wrapper {
+    position: absolute;
+    top: 65%; /* Vertical center alignment */
+    left: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: flex;
+    pointer-events: none; /* Allows swiping through images */
+}
+
+.gallery-custom-prev, 
+.gallery-custom-next {
+    width: 65px;
+    height: 65px;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Buttons remain clickable */
+}
+
+/* Gray Scale Colors */
+.gallery-custom-prev {
+    background: #e2e2e2;
+    color: #000;
+    
+}
+
+.gallery-custom-next {
+    background: #cccccc;
+    color: #000;
+   
+}
+
+.gallery-custom-prev:hover{
+   background: #000;
+   color: #fff;
+   transform:Scale(1.1);
+    z-index:999;
+}
+
+
+.gallery-custom-next:hover {
+    background: #000;
+    color: #fff;
+    transform:Scale(1.2);
+     z-index:999;
+}
+
+/* Description & View More Button */
+.gallery-desc {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 550px;
+}
+
+
+/* MOBILE RESPONSIVE QUERIES */
+@media (max-width: 768px) {
+    /* Buttons move to bottom center on mobile for better UX */
+    .cinematic-nav-wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        justify-content: center;
+        margin-top: 25px;
+        pointer-events: auto;
+    }
+
+    .gallery-img-box {
+        height: 300px;
+    }
+
+    .gallery-main-title {
+        font-size: 28px;
+    }
+
+    .gallery-view-btn {
+        background:#fff !important;
+        width: 100%;
+        justify-content: center;
+    }
+}

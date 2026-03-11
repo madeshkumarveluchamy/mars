@@ -1,0 +1,718 @@
+/* --- UNIVERSAL BUTTON STYLE (index.css) --- */
+.blog-swap-hero {
+    display: flex;
+    align-items: center;
+    background: #fff !important ;
+    color: #000 !important;
+    border: 1px solid #000;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    /* Responsive Widths */
+    width: 200px !important; 
+    height: 60px;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+
+.truck-img:hover{
+  transform:scale(1.1);
+}
+.massive-text:hover{
+  transform:scale(1.1);
+}
+/* THE ARROW (Left to Right Slide) */
+.blog-swap-hero .arrow {
+    position: absolute;
+    left: 0;
+    background: #000 !important;
+    color: #fff !important;
+    width: 50px; 
+    height: 85%!important;
+    margin:3px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth Cubic-Bezier Transition */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    z-index: 2;
+}
+
+/* THE TEXT (Right to Left Slide) */
+.blog-swap-hero .text {
+    width: 100%;
+    text-align: center;
+    padding-left: 45px; /* Arrow space-ai thavirkka */
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE HOVER MOTION --- */
+/* Arrow moves to the very end of the button */
+.blog-swap-hero:hover .arrow {
+    transform: translateX(285%); /* 200px button - 50px arrow = 150px shift */
+}
+
+/* Text moves to the left side */
+.blog-swap-hero:hover .text {
+    transform: translateX(-45px); 
+}
+.blog-swap-hero:hover{
+  transform: scale(1.1);
+}
+.massive-text{
+  font-family: 'Michroma', sans-serif !important;
+  text-transform: uppercase;
+  text-shadow: 8px 0px 0px currentColor, -1px 0px 0px currentColor;
+}
+
+.info-title{
+  font-family: 'Michroma', sans-serif !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1440px) {
+    .blog-swap-hero {
+        width: 170px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-hero .arrow {
+        width: 42px;
+    }
+    .blog-swap-hero .text {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-hero:hover .arrow {
+        transform: translateX(108px) !important; /* 170px - 42px */
+    }
+    .blog-swap-hero:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-swap-hero {
+        width: 150px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-hero .arrow {
+        width: 42px;
+    }
+    .blog-swap-hero .text {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-hero:hover .arrow {
+        transform: translateX(107px) !important; /* 170px - 42px */
+    }
+    .blog-swap-hero:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+/* Mobile Responsiveness (For Phone Screens) */
+@media (max-width: 576px) {
+    .blog-swap-hero { /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-hero .arrow {
+        width: 42px;
+    }
+    .blog-swap-hero .text {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-hero:hover .arrow {
+        transform: translateX(100px); /* 170px - 42px */
+    }
+    .blog-swap-hero:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+.hero-section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Background Logic */
+.hero-bg-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Button Hover Swap Logic */
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5); /* Darkens the workshop */
+}
+
+.hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 2;
+}
+
+/* Massive Text (Layer 3) */
+.mars-text-bg {
+  position: absolute;
+  right: 1px;
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: right;
+  padding-right: 5%;
+  z-index: 3;
+}
+.about-heading {
+  font-size: clamp(
+    1.5rem,
+    4vw,
+    2.5rem
+  ); /* Mobile-la 1.5rem, Large screen-la 2.5rem-ah automatic-ah maarum */
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.massive-text {
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0px;
+  line-height: 0.8;
+  margin: 0;
+}
+
+/* Truck (Layer 4 - Front) */
+.truck-foreground{
+  position: absolute;
+  bottom: 20%;
+  right: 8%!important;
+  width: 65%;
+  z-index: 4; /* Text-ku munnadi varum */
+}
+
+.truck-img {
+  width: 45%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+}
+
+/* Container for both bottom boxes */
+.hero-bottom-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  height:15vh ;
+  z-index: 100;
+  display: flex !important;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* --- Info Box (Box 1) --- */
+.info-box-elite {
+  background: #ffffff;
+  display: flex !important;
+  padding: 10px;
+  gap: 15px;
+  width: 25vw;
+  height: 180px !important;
+  align-items: start;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  
+}
+ .info-box-elite:hover{
+  transform:translateY(-3px) scale(1.09);
+ }
+.info-img-wrapper {
+  width: 40%!important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.info-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+}
+
+.info-title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.info-arrow-bottom {
+  position: absolute;
+  right: 5px;
+  top:110px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* --- Explore Split Box (Box 2) --- */
+.explore-split-box {
+  display: flex;
+  align-items: end;
+  height: auto;
+  width: 15vw !important;
+}
+
+.black-square-arrow {
+  background: #000000;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-arrow-icon {
+  width: 16px;
+  filter: invert(1); /* If your arrow is black, makes it white */
+}
+.massive-text {
+    /* clamp(min, preferred, max) - height and size scale fluid-ah aagum */
+    font-size: clamp(6rem, 18vw, 18rem) !important; 
+    line-height: 0.85; /* Text height-a innum compact-ah maatha */
+    
+    /* Smooth transaction logic during resize */
+    transition: font-size 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                line-height 0.8s ease !important;
+    font-weight:800 !important;
+    will-change: font-size; /* Browser lag-a prevent panna */
+}
+
+.white-text-area {
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  color: #000;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 1px solid #000; /* Subtle border for definition */
+}
+/* --- Global Transition Force (Add this first) --- */
+.massive-text {
+  /* Smooth transition for ALL screen size changes */
+  transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change:
+    transform, font-size, bottom, width; /* Browser lag-a prevent pannum */
+}
+.about-heading,
+.truck-foreground,
+.truck-img, .info-box-elite {
+  /* Smooth transition for ALL screen size changes */
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change:
+    transform, font-size, bottom, width; /* Browser lag-a prevent pannum */
+}
+
+@media (min-width: 2560px) {
+  .info-box-elite {
+    bottom: 5% !important;
+    margin-left:30px !important;
+  }
+  .info-title {
+  font-size: 15px;
+}
+.blog-swap-hero .arrow{
+  font-size:30px ;
+}
+.explore-split-box {
+  display: flex;
+  align-items: end;
+  height: 15vh;
+  width: 40vw !important;
+}
+.blog-swap-hero{
+  height:5vh !important;
+  width: 15vw !important;
+  margin-left:30px !important;
+}
+.blog-swap-hero .text{
+  font-size:15px !important;
+}
+.blog-swap-hero .arrow{
+  width:25% !important;
+}
+
+  
+  .truck-foreground {
+     /* !important to force smooth override */
+    /* Fluid width for better layout */
+    right: 5% !important;
+    top: 30% !important;
+    width: 100% !important;
+    height: 35% !important;
+  }
+  .truck-img {
+  width: 55%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+  }
+  
+  .massive-text {
+    width: 45% !important;
+    font-size:10vw !important;
+    height:45%!important;
+  }
+  .mars-text-bg{
+    left:54% !important;
+    top:41% !important;
+    width:45%!important;
+    height:45% !important;
+  }
+
+  
+}
+
+
+
+@media (max-width: 2560px) {
+  .info-box-elite {
+    bottom: 5% !important;
+     height:110px !important;
+  }
+  
+  .truck-foreground {
+     /* !important to force smooth override */
+    /* Fluid width for better layout */
+    right: 5% !important;
+    top: 25% !important;
+    width: 100% !important;
+    height: 35% !important;
+  }
+  .truck-img {
+  width: 57%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+  }
+  
+  .massive-text {
+    
+    width: 40% !important;
+    font-size:10vw !important;
+  }
+  .mars-text-bg{
+    top:42%!important;
+    left:54% !important;
+    bottom:56%!important;
+    width:45%!important;
+    height:45% !important;
+  }
+
+  .info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top:55px !important;
+  font-size: 40px;
+  font-weight: bold;
+}
+}
+
+
+/* Large Desktop */
+@media (max-width: 1440px) {
+  .info-box-elite {
+    bottom: 5% !important;
+    height:120px !important;
+  }
+  
+  .truck-foreground { /* !important to force smooth override */
+    /* Fluid width for better layout */
+    right: 8% !important;
+    top: 32% !important;
+    width: 95% !important;
+    height: 5% !important;
+  }
+  .massive-text {
+    width: 35% !important;
+    font-size:10vw !important;
+  }
+  .mars-text-bg{
+   top:44% !important;
+   bottom:50%!important;
+  }
+
+  
+.info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top: 60px !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+.info-title{
+  font-size:10px !important;
+}
+
+  
+}
+
+@media (max-width: 1024px) {
+  .info-box-elite {
+    bottom: 5% !important;
+    height:90px !important;
+  }
+  
+  .truck-foreground {
+ /* !important to force smooth override */
+    /* Fluid width for better layout */
+    right: 5% !important;
+    top: 32% !important;
+    width: 95% !important;
+    height: 5% !important;
+  }
+  .massive-text {
+    width: 35% !important;
+    font-size:10vw !important;
+    width:40% !important;
+  }
+  .mars-text-bg{
+   top:43% !important;
+   bottom:50%!important;
+  }
+
+ 
+.info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+  
+}
+
+
+
+/* Tablet / Laptop */
+@media (max-width: 991px) {
+  .info-box-elite {
+    bottom: 5% !important;
+    width:30vw !important;
+    height:75px !important;
+  }
+  .info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top: 20px !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+.info-title{
+  font-size:8px!important;
+}
+  .truck-foreground {
+    width:auto !important;
+    top: 43% !important; /* Mobile-la truck perusa theriyanum */
+    left:1%!important;
+  }
+  .truck-img{
+    width:70% !important;
+
+    
+  }
+  .hero-bottom-container {
+    bottom: 20px !important;
+    left: 20px !important;
+    gap: 10px !important;
+    width:20vw !important;
+  }
+  .massive-text {
+    width: 50% !important;
+    font-size:16vw !important;
+    
+  }
+
+ .explore-split-box {
+  display: flex;
+  align-items: end;
+  height: auto;
+  width: 30vw !important;
+ }
+
+  .mars-text-bg{
+    top:25%!important;
+    left:30% !important;
+    width:50%!important;
+    transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+  }
+  .hero-bottom-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  height:15vh ;
+  z-index: 100;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  
+ }
+ 
+
+
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  
+
+  .truck-foreground {
+    width:90% !important;
+    top: 43% !important; /* Mobile-la truck perusa theriyanum */
+    left:1%!important;
+  }
+  .truck-img{
+    width:100%!important;
+    
+  }
+  
+   .massive-text {
+    width: 50% !important;
+    font-size:17vw !important;
+    
+  }
+  .mars-text-bg{
+    top:30%!important;
+    left:15% !important;
+    width:50%!important;
+    transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+  }
+
+  .hero-bottom-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  height:15vh ;
+  z-index: 100;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.info-box-elite {
+  background: #ffffff;
+  display: flex !important;
+  padding: 10px;
+  gap: 15px;
+  width: 60vw;
+  height: 15vh !important;
+  align-items: center;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.explore-split-box {
+  display: flex;
+  align-items: end;
+  height: auto;
+  width: 40vw !important;
+}
+  
+}
+
+/* Mobile */
+@media (max-width: 472px) {
+  
+
+  .truck-foreground {
+    width:90% !important;
+    top: 44% !important; /* Mobile-la truck perusa theriyanum */
+    left:1%!important;
+  }
+  .truck-img{
+    width:100%!important;
+    
+  }
+  
+   .massive-text {
+    width: 50% !important;
+    font-size:19vw !important;
+    
+  }
+  .mars-text-bg{
+    top:35%!important;
+    left:15% !important;
+    width:50%!important;
+    transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+  }
+
+  .hero-bottom-container {
+  position: absolute;
+  bottom:125px !important;
+  left: 50px;
+  height:11vh !important ;
+  z-index: 100;
+  display: flex !important;
+  flex-direction: column !important;
+  
+}
+
+.info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.info-box-elite {
+  background: #ffffff;
+  display: flex !important;
+  padding: 10px;
+  gap: 15px;
+  width: 70vw !important;
+  height: 15vh !important;
+  align-items: center;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+.explore-split-box {
+  display: flex;
+  align-items: end;
+  height:auto;
+  width: 55vw !important;
+}
+  
+}
+
+@media(max-width:320){
+  .massive-text{
+    font-size:33vw !important;
+  }
+}

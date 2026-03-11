@@ -1,0 +1,87 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../../assets/css/Navbar.css';
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [currentSectionBg, setCurrentSectionBg] = useState('black'); // Initial state
+
+  useEffect(() => {
+    // 1. Scroll check for capsule
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    // 2. Observer for section BG detection
+    const sections = document.querySelectorAll("section[data-bg]");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setCurrentSectionBg(entry.target.getAttribute("data-bg"));
+        }
+      });
+    }, { threshold: 0.6 });
+
+    sections.forEach((s) => observer.observe(s));
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
+  // Theme apply aaguradhu scrolled state-la mattum dhaan
+  const activeTheme = scrolled 
+    ? (currentSectionBg === 'black' ? 'theme-white-nav' : 'theme-black-nav') 
+    : 'default-nav'; 
+
+  return (
+    <nav className={`mars-navbar-main ${scrolled ? 'is-scrolled' : ''} ${activeTheme}`}>
+      <div className="nav-flex-wrapper  d-flex flex-column flex-xl-row justify-content-between gap-5 col-12">
+        <div className="nav-white-container col-8">
+          {!scrolled && (
+          <AnimatePresence mode="wait">
+              <motion.div 
+                key="logo"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="nav-logo-area d-flex flex-wrap"
+              >
+                <img src="/marslogo.png" alt="Logo" href="#home" className="logo-main-img" />
+              </motion.div>
+          </AnimatePresence>
+          )}
+  
+          <div className="nav-links-area w-100 d-flex m-2">
+            <div className="nav-links-list d-flex justify-content-evenly w-100 flex-wrap align-items-center">
+              <a href="#home" className="nav-item">HOME</a>
+              <a href="#about" className="nav-item">ABOUT</a>
+              <a href="#solutions" className="nav-item">MARS SOLUTIONS</a>
+              <a href="#contact" className="nav-item">CONTACT</a>
+              <a href="#blog" className="nav-item">BLOG</a>
+            </div>
+          </div>
+        </div>
+
+        {!scrolled && (
+        <AnimatePresence>
+            <motion.div 
+              initial={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              className="external-button-box hide-mobile col-3 d-flex justify-content-center align-items-center"
+            >
+              <button className="blog">
+                <span className="arrow">→</span>
+                <span className="text">LET'S BUILD YOUR OWN VEHICLE</span>
+              </button>
+            </motion.div>
+        </AnimatePresence>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

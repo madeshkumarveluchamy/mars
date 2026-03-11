@@ -1,0 +1,231 @@
+.sustainable-section{
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.orbital-container {
+    position: relative;
+    width: 1000px; 
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CENTER TEXT STYLES */
+.main-title {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111;
+    z-index: 10;
+}
+
+/* ORBIT ANIMATION */
+.orbit-wrapper {
+    position: absolute;
+    width: 850px; 
+    height: 850px;
+    border-radius: 50%;
+    animation: rotateClockwise 40s linear infinite;
+}
+
+/* HOVER PANNUM POTHU ANIMATION STOP AAGUM */
+.orbit-item:hover, 
+.orbit-item:hover  {
+    animation-play-state: paused;
+}
+
+/* Mukkiyamaana note: Animation 'orbit-wrapper' matrum 'stabilizer' mela run aagurathaala,
+   ithu velai seiya 'inherit' property help pannum. */
+
+.orbit-wrapper {
+    /* ... unga palaiya code ... */
+    animation: rotateClockwise 40s linear infinite;
+}
+
+.stabilizer {
+    /* ... unga palaiya code ... */
+    animation: counterRotate 40s linear infinite;
+}
+
+
+/* COUNTER-ROTATION */
+.stabilizer {
+    animation: counterRotate 40s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Overlay-kku ithu avasiyam */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.orbit-item {
+    position: absolute;
+    width: 220px;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.orbit-img:hover{
+
+}
+
+/* TEXT OVERLAY STYLE */
+.image-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Karuppu color overlay */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    opacity: 0; /* Normal-ah theriyaathu */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* HOVER PANNUM POTHU MATTUM TEXT THERIYUM */
+.orbit-item:hover .image-text-overlay {
+    opacity: 1;
+}
+
+.orbit-img:hover{
+    transform:scale(1.1) !important;
+}
+
+.orbit-item:hover .orbit-img {
+    transform: scale(1.1);
+}
+
+/* 8-POINT SYMMETRY */
+.item-1 { top: 0%;   left: 50%; }
+.item-2 { top: 14.6%; left: 85.4%; }
+.item-3 { top: 50%;  left: 100%; }
+.item-4 { top: 85.4%; left: 85.4%; }
+.item-5 { top: 100%; left: 50%; }
+.item-6 { top: 85.4%; left: 14.6%; }
+.item-7 { top: 50%;  left: 0%; }
+.item-8 { top: 14.6%; left: 14.6%; }
+
+/* ANIMATIONS */
+@keyframes rotateClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+.center-content {
+
+  width:500px;
+
+}
+
+/* Stops rotation only while the mouse button is pressed down */
+/* Add this to your CSS file */
+.orbit-wrapper:has(.orbit-item:hover) {
+    animation-play-state: paused;
+}
+
+/* 2. Stop the individual image counter-rotation on hover */
+/* This ensures the image stays upright and doesn't jitter */
+.orbit-wrapper:has(.orbit-item:hover) .stabilizer {
+    animation-play-state: paused;
+}
+
+.center-content h2{
+
+  font-size:30px
+
+}
+
+.center-content p{
+
+  font-size:10px
+
+}
+
+/* 1. MAIN BUTTON CONTAINER */
+.blog-swa {
+    display: block; 
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    width: 210px; /* Adjust based on your text length */
+    height: 48px;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+}
+
+/* 2. ARROW (Always Absolute) */
+.blog-swa .rrow {
+    position: absolute;
+    top: 0;
+    left: 0; /* Default Left */
+    background: #fff;
+    color: #000;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth Transition */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+/* 3. TEXT (Always Absolute) */
+.blog-swa .ext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    right: 20px; /* Default Right */
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 4. THE MAGIC: HOVER ON BUTTON, NOT JUST ARROW */
+/* Button mela hover pannum pothu arrow right-ku poganum */
+.blog-swa:hover .rrow {
+    transform: translateX(298%);
+}
+
+/* Button mela hover pannum pothu text left-ku varanum */
+.blog-swa:hover .ext {
+    transform: translateX(-45px);  /* Arrow size-ah vida konjam athigama kudu-nga */
+}
+
+/* Optional: Slight hover effect for the whole button */
+.blog-swa:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transform:scale(1.1);
+}
