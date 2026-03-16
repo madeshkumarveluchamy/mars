@@ -1,231 +1,716 @@
-.sustainable-section{
-    background: #fff;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+
+
+
+.sustainable-section {
+  background-color: #ffffff;
+  /* Top/Bottom hide aaguratha thadukka min-height mukkiyam */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Images cut aagaama irukka overflow visible veikanum */
+  overflow: visible; 
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0;
 }
 
 .orbital-container {
-    position: relative;
-    width: 1000px; 
-    height: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 650px; /* Small orbit round logic */
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* CENTER TEXT STYLES */
-.main-title {
-    font-size: 34px;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #111;
-    z-index: 10;
+/* CLOCKWISE: Main orbit suthum pothu images path-la move aagum */
+.orbit-wrapper-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: mainOrbitRotate 45s linear infinite;
 }
 
-/* ORBIT ANIMATION */
-.orbit-wrapper {
-    position: absolute;
-    width: 850px; 
-    height: 850px;
-    border-radius: 50%;
-    animation: rotateClockwise 40s linear infinite;
-}
-
-/* HOVER PANNUM POTHU ANIMATION STOP AAGUM */
-.orbit-item:hover, 
-.orbit-item:hover  {
-    animation-play-state: paused;
-}
-
-/* Mukkiyamaana note: Animation 'orbit-wrapper' matrum 'stabilizer' mela run aagurathaala,
-   ithu velai seiya 'inherit' property help pannum. */
-
-.orbit-wrapper {
-    /* ... unga palaiya code ... */
-    animation: rotateClockwise 40s linear infinite;
-}
-
-.stabilizer {
-    /* ... unga palaiya code ... */
-    animation: counterRotate 40s linear infinite;
-}
-
-
-/* COUNTER-ROTATION */
-.stabilizer {
-    animation: counterRotate 40s linear infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Overlay-kku ithu avasiyam */
-    overflow: hidden;
-    border-radius: 4px;
+@keyframes mainOrbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .orbit-item {
-    position: absolute;
-    width: 220px;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -90px;
+  /* Images-ai circle path-la thalli vekkum */
+  transform: rotate(calc(var(--index) * (360deg / var(--total)))) translate(320px);
+}
+
+/* STABILIZER (ANTI-ROTATE): Macha, ithu thaan image-ai thirumba vidama straight-ah vekkum */
+.stabilizer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Opposite rotation makes the internal image stay vertical */
+  animation: stayStraightVertical 45s linear infinite;
+}
+
+@keyframes stayStraightVertical {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
 }
 
 .orbit-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-.orbit-img:hover{
-
-}
-
-/* TEXT OVERLAY STYLE */
-.image-text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Karuppu color overlay */
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: 800;
-    opacity: 0; /* Normal-ah theriyaathu */
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-/* HOVER PANNUM POTHU MATTUM TEXT THERIYUM */
-.orbit-item:hover .image-text-overlay {
-    opacity: 1;
-}
-
-.orbit-img:hover{
-    transform:scale(1.1) !important;
-}
-
-.orbit-item:hover .orbit-img {
-    transform: scale(1.1);
-}
-
-/* 8-POINT SYMMETRY */
-.item-1 { top: 0%;   left: 50%; }
-.item-2 { top: 14.6%; left: 85.4%; }
-.item-3 { top: 50%;  left: 100%; }
-.item-4 { top: 85.4%; left: 85.4%; }
-.item-5 { top: 100%; left: 50%; }
-.item-6 { top: 85.4%; left: 14.6%; }
-.item-7 { top: 50%;  left: 0%; }
-.item-8 { top: 14.6%; left: 14.6%; }
-
-/* ANIMATIONS */
-@keyframes rotateClockwise {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes counterRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
-}
-
+/* CENTER CONTENT */
 .center-content {
-
-  width:500px;
-
+  z-index: 20;
+  max-width: 400px;
+  position: relative;
 }
 
-/* Stops rotation only while the mouse button is pressed down */
-/* Add this to your CSS file */
-.orbit-wrapper:has(.orbit-item:hover) {
-    animation-play-state: paused;
+.main-title {
+  font-size: 25px; /* Proportional scaling */
+  font-weight: 900;
+  line-height: 1.1;
+  color: #000;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
-/* 2. Stop the individual image counter-rotation on hover */
-/* This ensures the image stays upright and doesn't jitter */
-.orbit-wrapper:has(.orbit-item:hover) .stabilizer {
-    animation-play-state: paused;
+/* Drive Innovation Button Style */
+.drive-btn {
+  display: flex;
+  border: 2px solid #000;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin: 20px auto 0;
+  align-items: stretch;
 }
 
-.center-content h2{
-
-  font-size:30px
-
+.arrow-sus {
+  background: #fff;
+  color: #000;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #000;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.center-content p{
-
-  font-size:10px
-
+.text-sus {
+  background: #000;
+  color: #fff;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+/* --- ORBIT WRAPPER --- */
+.orbit-wrapper-main {
+  position: absolute;
+  width: 600px;  /* Intha size unga design-ku etha maari mathikkonga */
+  height: 600px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit-rotation 40s linear infinite; /* Main Orbit Animation */
 }
 
-/* 1. MAIN BUTTON CONTAINER */
-.blog-swa {
-    display: block; 
-    background: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 0;
-    cursor: pointer;
-    position: relative;
-    width: 210px; /* Adjust based on your text length */
-    height: 48px;
-    overflow: hidden; 
-    transition: all 0.3s ease;
+/* --- INDIVIDUAL ITEM POSITIONING --- */
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;  /* Image container size */
+  height: 100px;
+  margin-top: -50px; /* Centering trick */
+  margin-left: -70px;
+
+  /* Calc logic to place images in a circle */
+  transform: 
+    rotate(calc(360deg / var(--total) * var(--index))) 
+    translate(300px) 
+    rotate(calc(-360deg / var(--total) * var(--index))); 
+    /* ^ Melulla line image-ah circle-la vekkum */
 }
 
-/* 2. ARROW (Always Absolute) */
-.blog-swa .rrow {
-    position: absolute;
-    top: 0;
-    left: 0; /* Default Left */
-    background: #fff;
-    color: #000;
-    width: 50px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Smooth Transition */
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 2;
+/* --- STABILIZER (The Real Fix) --- */
+.stabilizer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Ippo orbit suthum podhu, athuku opposite-ah image-ah rotate panrom */
+  animation: counter-rotation 40s linear infinite;
 }
 
-/* 3. TEXT (Always Absolute) */
-.blog-swa .ext {
-    position: absolute;
+.orbit-img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+/* --- ANIMATIONS --- */
+
+/* Main Orbit suthurathuku */
+@keyframes orbit-rotation {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Image straight-ah irukkurathuku (Counter Rotate) */
+@keyframes counter-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); } /* Notice the negative sign */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .orbit-wrapper-main {
+    width: 350px;
+    height: 350px;
+  }
+  .orbit-item {
+    width: 100px;
+    transform: rotate(calc(360deg / var(--total) * var(--index))) translate(180px) rotate(calc(-360deg / var(--total) * var(--index)));
+  }
+}
+/* BUTTON CONTAINER */
+.drive-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #000;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 2px;
+  overflow: hidden; /* Excess animation veliya theriyaama irukka */
+  transition: all 0.3s ease;
+}
+
+/* ARROW BOX (WHITE PART) */
+.arrow-sus {
+  background: #fff;
+  color: #000;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #000;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+}
+
+/* TEXT BOX (BLACK PART) */
+.text-sus {
+  background: #000;
+  color: #fff;
+  padding: 0 30px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* --- HOVER ANIMATIONS --- */
+
+/* 1. Button full-ah light-ah mela thookura mathiri */
+.drive-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 2. Arrow-ah mattum light-ah rotate panni mela thookuvom */
+.drive-btn:hover .arrow {
+  background: #f0f0f0; /* Light grey on hover */
+  transform: scale(1.1);
+}
+
+/* 3. Arrow icon move aagura effect (Optional) */
+.drive-btn:hover .arrow::after {
+  display: inline-block;
+  content: '→';
+  position: absolute;
+  animation: arrowSlide 0.6s infinite;
+}
+
+/* 4. Text konjam expand aagura mathiri */
+.drive-btn:hover .text {
+  padding: 0 40px;
+  background: #222; /* Darker black */
+}
+
+/* ARROW SLIDE ANIMATION */
+@keyframes arrowSlide {
+  0% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(5px); opacity: 0.5; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ACTIVE/CLICK EFFECT */
+.drive-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+/* ============================= */
+/* MOBILE ROTATING ORBIT FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .sustainable-section {
+    padding: 100px 20px;
+    min-height: auto;
+  }
+
+  .orbital-container {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-wrapper-main {
+    width: 320px;
+    height: 320px;
     top: 50%;
-    transform: translateY(-50%); /* Center vertically */
-    right: 20px; /* Default Right */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit-rotation 60s linear infinite; /* Slow for mobile */
+  }
+
+  .orbit-item {
+    width: 80px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -40px;
+
+    transform:
+      rotate(calc(360deg / var(--total) * var(--index)))
+      translate(130px)
+      rotate(calc(-360deg / var(--total) * var(--index)));
+  }
+
+  .stabilizer {
+    animation: counter-rotation 60s linear infinite;
+  }
+
+  .orbit-img {
+    border-radius: 10px;
+  }
+
+  .center-content {
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 18px;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .drive-btn {
+    margin-top: 15px;
+  }
+
+  .arrow-sus {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .text-sus {
+    height: 45px;
     font-size: 11px;
-    font-weight: 800;
-    white-space: nowrap;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0 18px;
+  }
+}
+/* ================================= */
+/* MOBILE CENTER CONTENT SCALE FIX */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+  /* Reduce center content width */
+  .center-content {
+    max-width: 240px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Small subtitle */
+  .sub-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  /* Main title smaller */
+  .main-title {
+    font-size: 15px;
+    line-height: 1.40;
+  }
+
+  /* Button compact version */
+  .drive-btn {
+    margin-top: 12px;
+    transform: scale(0.85);   /* Entire button small aagum */
+  }
+
+  .arrow-sus {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .text-sus {
+    height: 38px;
+    font-size: 10px;
+    padding: 0 14px;
+    letter-spacing: 0.5px;
+  }
+
+}
+/* ============================= */
+/* MOBILE CENTER CONTENT SCALE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Center wrapper small */
+  .center-content {
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    transform: scale(0.7);
+  }
+
+  /* Sub title smaller */
+  .sub-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  /* Main title proportional small */
+  .main-title {
+    font-size: 10px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  /* Button compact */
+  .drive-btn {
+    transform: scale(0.65);
+    margin-top: 4px;
+  }
+
+  .arrow-sus {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .text-sus {
+    height: 38px;
+    font-size: 12px;
+    padding: 0 14px;
+    letter-spacing: 0.5px;
+  }
+
+}
+/* CONTENT CARD */
+
+.orbit-content{
+
+position:absolute;
+
+bottom:-150px;   /* hide below image */
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:150px;
+height: 110px;
+
+background:#4facfe;
+
+border-radius:12px;
+
+padding:12px;
+
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+opacity:0;        /* hidden */
+
+pointer-events:none;
+
+transition:.35s ease;
+
 }
 
-/* 4. THE MAGIC: HOVER ON BUTTON, NOT JUST ARROW */
-/* Button mela hover pannum pothu arrow right-ku poganum */
-.blog-swa:hover .rrow {
-    transform: translateX(298%);
+/* SHOW WHEN CLICK */
+
+.orbit-item.active .orbit-content{
+
+bottom:-10px;
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+.view-overlay{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+border-radius:14px;
+
+background:rgba(0,0,0,.55);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:#fdfdfd;
+
+font-weight:700;
+
+opacity:0;
+
+transition:.3s;
+
 }
 
-/* Button mela hover pannum pothu text left-ku varanum */
-.blog-swa:hover .ext {
-    transform: translateX(-45px);  /* Arrow size-ah vida konjam athigama kudu-nga */
+.orbit-item:hover .view-overlay{
+opacity:1;
+}
+.orbit-content h4{
+font-size:12px;         /* smaller title */
+font-weight:700;
+margin-bottom:4px;
+line-height:1.2;
+}
+/* =========================
+MOBILE VIEW (768px ↓)
+========================= */
+
+@media (max-width:768px){
+
+.orbit-content{
+
+bottom:-120px;          /* hide distance mobile */
+left:50%;
+
+transform:translateX(-50%);
+
+width:85px;            /* smaller card */
+height:auto;
+
+background:#4facfe;
+
+border-radius:10px;
+
+padding:8px;
+
+text-align:center;
+
+box-shadow:0 8px 18px rgba(0,0,0,.2);
+
+opacity:0;
+pointer-events:none;
+
+transition:.35s ease;
+
 }
 
-/* Optional: Slight hover effect for the whole button */
-.blog-swa:hover {
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-    transform:scale(1.1);
+/* show when click */
+
+.orbit-item.active .orbit-content{
+
+bottom:-6px;
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+/* title */
+
+.orbit-content h4{
+
+font-size:10px;
+
+font-weight:700;
+
+margin-bottom:3px;
+
+line-height:1.2;
+
+color:#fff;
+
+}
+
+/* description */
+
+.orbit-content p{
+
+font-size:8px;
+
+line-height:1.2;
+
+color:#0b0b0b;
+
+}
+
+/* overlay */
+
+.view-overlay{
+
+border-radius:10px;
+
+font-size:11px;
+
+}
+
+}
+.orbit-wrapper-main {
+  
+  width: 5%;
+  height: 5%;
+  animation: orbitRotation 40s linear infinite;
+  
+  
+}
+.orbit-wrapper-main.pause-orbit {
+  animation-play-state: paused; /* Animation-ai stop pannum */
+}
+
+/* Images thirumba rotate aaga koodathunnu stabilizer-aiyum pause panren */
+.pause-orbit .stabilizer {
+  animation-play-state: paused;
+}
+
+/* Stabilizer animation (Counter-rotation to keep images straight) */
+.stabilizer {
+  animation: stabilizerRotation 40s linear infinite reverse;
+}
+
+@keyframes orbitRotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes stabilizerRotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.orbit-item:hover .orbit-content{
+
+bottom:-10px;
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+.orbit-item:hover .orbit-img{
+
+transform:scale(0);
+
+}
+/* ORBIT WRAPPER ROTATION */
+
+
+
+/* KEYFRAME */
+
+@keyframes orbitRotate{
+
+from{
+transform: rotate(0deg);
+}
+
+to{
+transform: rotate(360deg);
+}
+
+}
+
+/* HOVER → FULL STOP */
+
+.orbit-wrapper-main:hover,
+.orbit-wrapper-main:hover .orbit-item,
+.orbit-wrapper-main:hover .stabilizer{
+
+animation-play-state: paused !important;
+
+}
+@media (max-width:768px){
+
+/* touch show content */
+
+.orbit-item:active .orbit-content,
+.orbit-item:focus-within .orbit-content{
+
+bottom:-10px;
+opacity:1;
+pointer-events:auto;
+
+}
+
+/* image hide */
+
+.orbit-item:active .orbit-img,
+.orbit-item:focus-within .orbit-img{
+
+transform:scale(0);
+
+}
+
+/* stop orbit rotation */
+
+.orbit-wrapper-main:active{
+
+animation-play-state: paused;
+
+}
+
 }

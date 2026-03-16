@@ -1,3 +1,19 @@
+ { img: "/brighttruckbackground.png", text: "ADVANCED CHASSIS" },
+    { img: "/crosswelding.png", text: "PRECISION WELDING" },
+    { img: "/heropagetruck.png", text: "DURABLE BODIES" },
+    { img: "/truck4.png", text: "SAFETY FIRST" },
+    { img: "/truck5.png", text: "INNOVATIVE DESIGN" },
+    { img: "/truck6.png", text: "QUALITY ASSURED" },
+    { img: "/truck7.png", text: "MODERN TECHNOLOGY" },
+    { img: "/truck8.png", text: "EXPERT ENGINEERING" }
+
+
+
+
+
+
+
+
 /* Layout Base */
 .mars-navbar-main {
     position: fixed;

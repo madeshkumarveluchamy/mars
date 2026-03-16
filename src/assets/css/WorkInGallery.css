@@ -1,3 +1,138 @@
+.blog-swap-gallery {
+    display: flex;
+    align-items: center;
+    background: #000 !important ;
+    color: #fff !important;
+    border: 1px solid #000;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    /* Responsive Widths */
+    width: 200px !important; 
+    height: 60px;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+
+.truck-img:hover{
+  transform:scale(1.1);
+}
+.massive-text-gallery:hover{
+  transform:scale(1.1);
+}
+/* THE arrow-gallery (Left to Right Slide) */
+.blog-swap-gallery .arrow-gallery {
+    position: absolute;
+    left: 0;
+    background: #fff !important;
+    color: #000  !important;
+    width: 50px; 
+    height: 85%!important;
+    margin:3px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth Cubic-Bezier Transition */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    z-index: 2;
+}
+
+/* THE text-gallery (Right to Left Slide) */
+.blog-swap-gallery .text-gallery {
+    width: 100%;
+    text-gallery-align: center;
+    padding-left: 45px; /* arrow-gallery space-ai thavirkka */
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE HOVER MOTION --- */
+/* arrow-gallery moves to the very end of the button */
+.blog-swap-gallery:hover .arrow-gallery {
+    transform: translateX(280%); /* 200px button - 50px arrow-gallery = 150px shift */
+}
+
+/* text-gallery moves to the left side */
+.blog-swap-gallery:hover .text-gallery {
+    transform: translateX(-45px); 
+}
+.blog-swap-gallery:hover{
+  transform: scale(1.1);
+}
+.massive-text-gallery{
+  font-family: 'Michroma', sans-serif !important;
+  text-gallery-transform: uppercase;
+  text-gallery-shadow: 8px 0px 0px currentColor, -1px 0px 0px currentColor;
+}
+
+.info-title{
+  font-family: 'Michroma', sans-serif !important;
+  text-gallery-transform: uppercase;
+}
+
+@media (max-width: 1440px) {
+    .blog-swap-gallery {
+        width: 170px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(108px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-swap-gallery {
+        width: 150px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(107px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+}
+
+/* Mobile Responsiveness (For Phone Screens) */
+@media (max-width: 576px) {
+    .blog-swap-gallery { /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(99px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+}
 /* Container must be relative for floating buttons */
 .gallery-content-area {
     position: relative;
@@ -15,7 +150,7 @@
     line-height: 1.1;
     color: #000;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-gallery-transform: uppercase;
 }
 
 /* Image Styling */

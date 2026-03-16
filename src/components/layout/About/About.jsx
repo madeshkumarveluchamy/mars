@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "./css/About.css";
-import Innovation from "./Innovation";
-import AboutCounter from "./AboutCounter";
 
 // --- Step 1: Manual Vertical Slot Rolling Component ---
 const SlotCounter = ({ value, baseDirection = "up" }) => {
@@ -65,20 +63,22 @@ const About = () => {
       
         <div className="row mb-5 align-items-center stats-row d-flex flex-md-row-reverse">
 
-           <div className="col-12 col-md-9 ps-lg-5 mt-4 mt-lg-0 flex-wrap">
-            <p className="text-orange fw-bold mb-2">ABOUT US</p>
+           <div className="col-12 col-md-9 ps-lg-5 mt-4 mt-lg-0 flex-wrap text-center text-lg-start">
+            <p className="text-orange fw-bold mb-2 ">ABOUT US</p>
             <h2 className="about-heading fw-bold mb-4">
               MARS Automotive Designers manufactures durable, precision-engineered heavy vehicle bodies built for demanding industrial and commercial applications.
             </h2>
-            <p className="text-muted about-desc">MARS Automotive Designers specializes in heavy-duty vehicle body manufacturing, delivering strong, durable, and precision-built solutions for industrial applications.</p>
+            <p className="text-muted about-desc  text-center text-lg-start w-100">MARS Automotive Designers specializes in heavy-duty vehicle body manufacturing, delivering strong, durable, and precision-built solutions for industrial applications.</p>
+            <div className="d-flex justify-content-center justify-content-lg-start">
             <button className="blog-swap">
               <span className="arrow">→</span>
               <span className="text">EXPLORE OUR BLOG</span>
             </button>
+            </div>
           </div>
 
 
-          <div className="col-md-3 pe-3 border-end border-dark stats-left">
+          <div className="col-lg-3 pe-3 border-dark about-us stats-left">
             
             {/* 20+ Stats: 2 UP, 0 DOWN */}
             <h1 className="display-1 fw-bold mb-0 main-stat-container">
@@ -118,10 +118,10 @@ const About = () => {
                 
                 
                 <div key={index}  className="col-md-6 service-item  p-4">
-                  <div className="service-icon-wrapper mb-3">
+                  <div className="service-icon-wrapper mb-3 d-flex justify-content-center justify-content-lg-start">
                     <img src={service.icon} alt={service.title} className="service-geometric-icon" />
                   </div>
-                  <h6 className="fw-bold mb-3 service-title ">{service.title}</h6>
+                  <h6 className="fw-bold mb-3 service-title d-flex justify-content-center justify-content-lg-start">{service.title}</h6>
                   <p className="small text-muted mb-3 service-desc">{service.desc}</p>
                   <a href="#" className="view-more text-decoration-none fw-bold p-4">VIEW MORE →</a>
               

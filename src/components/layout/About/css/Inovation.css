@@ -279,3 +279,78 @@
     to { opacity: 1; }
 }
 
+/* Mobile Image Styling */
+.mobile-innovation-img {
+    background-color: #fdfae6; /* Active row matching color */
+    animation: slideDown 0.4s ease-out;
+    overflow: hidden;
+}
+
+.mobile-innovation-img img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Animation for smooth opening */
+@keyframes slideDown {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 500px; }
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 991px) {
+    .innovation-list-item {
+        padding: 25px 15px; /* Mobile-la konjam spacing kammi pannalam */
+    }
+    
+    .active-row .list-arrow {
+        transform: rotate(0deg); /* Arrow point down on active */
+    }
+
+    /* Remove hover background on mobile to avoid stickiness */
+    .innovation-list-item:hover::after {
+        display: block;
+    }
+    
+    /* Show background only for active state on mobile */
+    .active-row::after {
+        transform: scaleX(1) !important;
+    }
+    .imagee{
+        transition:all 0.1s ease !important;
+    }
+.innovation-list-item::after {
+        transition: none !important; /* No sliding animation */
+        transform-origin: center; /* Animation illama direct-ah vara center fix */
+    }
+
+    /* 2. Active-row text color instant-ah black aaganum */
+    .active-row .list-title, 
+    .active-row .list-desc, 
+    .active-row .list-arrow{
+        color: #000 !important;
+        transition: none !important; 
+    }
+    .active-row .list-desc{
+        color:#000 !important;
+    }
+
+    /* 3. Padding and Spacing adjustments */
+    .innovation-list-item {
+        padding: 20px 15px;
+    }
+
+    /* 4. Arrow direction change */
+    .active-row .list-arrow {
+        display: inline-block;
+        transform: rotate(90deg); /* Arrow down face panra maari */
+    }
+
+    /* 5. Mobile image section matching */
+    .mobile-innovation-img {
+        background-color: #fdfae6; /* Same as active background */
+        border-bottom: 1px solid #333;
+    }
+}

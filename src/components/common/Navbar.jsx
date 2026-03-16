@@ -70,7 +70,7 @@ const Navbar = () => {
             <motion.div 
               initial={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
-              className="external-button-box hide-mobile col-3 d-flex justify-content-center align-items-center"
+              className="external-button-box hide-mobile col-3 d-flex justify-content-center align-items-center d-none d-md-block"
             >
               <button className="blog">
                 <span className="arrow">→</span>

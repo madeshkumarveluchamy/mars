@@ -24,10 +24,10 @@ const SuccessStories = () => {
         <div className="row align-items-start locked-row">
           
           {/* LEFT SIDE: Pinned Title */}
-          <div className="col-lg-4 pinned-sidebar">
+          <div className="col-lg-4 pinned-sidebar1">
             <div className="sidebar-inner-content">
-              <p className="text-uppercase small mb-4 text-secondary">ENGINEERING SUCCESS STORIES</p>
-              <h2 className="success-main-title">
+              <p className="text-uppercase small mb-4 text-secondary text-center text-lg-start">ENGINEERING SUCCESS STORIES</p>
+              <h2 className="success-main-title text-center text-lg-start">
                 RELIABLE FABRICATION. <br />
                 ENGINEERED WITH INTEGRITY, <br />
                 SAFETY, AND INNOVATION.
@@ -47,23 +47,25 @@ const SuccessStories = () => {
                   <img src={story.img} alt={story.title} className="img-fluid w-100" />
                 </div>
                 <div className="label-holder p-4 bg-cream text-black">
-                  <p className="small fw-bold mb-0 text-uppercase">{story.title}</p>
+                  <p className="small fw-bold mb-0 text-uppercase text-center text-lg-start">{story.title}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* RIGHT SIDE: Pinned Blog Box */}
-          <div className="col-lg-4 pinned-sidebar">
+          <div className="col-lg-4 pinned-sidebar text-center text-lg-start">
             <div className="blog-callout-locked p-4 bg-white text-black shadow-lg">
-              <h6 className="fw-bold mb-2">WEEKLY ALIGNMENT TO ACHIEVE SHARED SUCCESS</h6>
-              <p className="small text-muted mb-3">
+              <h6 className="fw-bold mb-2 text-center text-lg-start">WEEKLY ALIGNMENT TO ACHIEVE SHARED SUCCESS</h6>
+              <p className="small text-muted mb-3 text-center text-lg-start">
                 The solutions offered were highly effective and tailored to our needs.
               </p>
+              <div className='w-100 d-flex justify-content-center '>
               <button className="blog-swap-success p-1">
                 <span className="arrow">→</span>
                 <span className="text">EXPLORE OUR BLOG</span>
               </button>
+              </div> 
             </div>
           </div>
 

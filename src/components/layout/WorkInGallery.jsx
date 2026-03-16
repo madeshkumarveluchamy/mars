@@ -67,10 +67,10 @@ const WorkInGallery = () => {
                 advanced technology, and sustainable solutions throughout all stages of energy development.
               </p>
             </div>
-            <div className="col-lg-5 mt-4 mt-lg-0" >
-              <button className=" blog-swap-hero p-1 ">
-                <span className="arrow">→</span>
-                <span className="text border-0">VIEW MORE</span>
+            <div className="col-lg-5 mt-4 mt-lg-0 d-flex justify-content-center justify-content-md-start" >
+              <button className=" blog-swap-gallery p-1 ">
+                <span className="arrow-gallery">→</span>
+                <span className="text-gallery border-0">VIEW MORE</span>
               </button>
             </div>
           </div>

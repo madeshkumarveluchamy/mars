@@ -1,17 +1,27 @@
-import React from 'react';
-import '../../assets/css/SustainableManufacturing.css';
+import React, { useState } from "react";
+import "../../assets/css/SustainableManufacturing.css";
+
+// Assets imports (ungethu matheriye vachukonga)
+import img1 from "/brighttruckbackground.png";
+import img2 from "/crosswelding.png";
+import img3 from "/heropagetruck.png";
+import img4 from "/truck4.png";
+import img5 from "/truck5.png";
+import img6 from "/truck6.png";
+import img7 from "/truck7.png";
 
 const SustainableManufacturing = () => {
-  // Images matrum atharkana text-ai array-vil kuduthullom
-  const orbitalData = [
-    { img: "/brighttruckbackground.png", text: "ADVANCED CHASSIS" },
-    { img: "/crosswelding.png", text: "PRECISION WELDING" },
-    { img: "/heropagetruck.png", text: "DURABLE BODIES" },
-    { img: "/truck4.png", text: "SAFETY FIRST" },
-    { img: "/truck5.png", text: "INNOVATIVE DESIGN" },
-    { img: "/truck6.png", text: "QUALITY ASSURED" },
-    { img: "/truck7.png", text: "MODERN TECHNOLOGY" },
-    { img: "/truck8.png", text: "EXPERT ENGINEERING" }
+  const [active, setActive] = useState(null);
+  const [pauseOrbit, setPauseOrbit] = useState(false);
+
+  const orbitalImages = [
+    { img: img1, title: "Advanced Welding", desc: "High precision robotic welding technology" },
+    { img: img2, title: "Heavy Truck Build", desc: "Industrial strength vehicle manufacturing" },
+    { img: img3, title: "Container Fabrication", desc: "Durable container body engineering" },
+    { img: img4, title: "Vehicle Assembly", desc: "Precision engineered truck assembly line" },
+    { img: img5, title: "Robotic Automation", desc: "Automated fabrication improving" },
+    { img: img6, title: "Truck Maintenance", desc: "Reliable servicing and inspection process" },
+    { img: img7, title: "Manufacturing Plant", desc: "Modern industrial manufacturing facility" }
   ];
 
   return (
@@ -19,35 +29,49 @@ const SustainableManufacturing = () => {
       <div className="container orbital-container">
         
         {/* CENTER CONTENT */}
-        <div className="center-content text-center ">
+        <div className="center-content text-center">
           <p className="subtitle">SUSTAINABLE MANUFACTURING</p>
           <h2 className="main-title">
-            BUILT WITH PRECISION. <br/> 
+            BUILT WITH PRECISION <br/>
             DELIVERED WITH SAFETY AND STRENGTH
           </h2>
-          <div className='d-flex justify-content-center mt-3'>
-            <button className="blog-swa">
-              <span className="rrow">→</span>
-              <span className="ext">DRIVE INNOVATION</span>
-            </button>
-          </div>
+          <button className="drive-btn">
+            <span className="arrow-sus">→</span>
+            <span className="text-sus">DRIVE INNOVATION</span>
+          </button>
         </div>
 
-        {/* 8-IMAGE ORBITAL PATH */}
-        <div className="orbit-wrapper">
-          {orbitalData.map((item, index) => (
-            <div key={index} className={`orbit-item item-${index + 1}`}>
-              <div className="stabilizer">
-                <img src={item.img} alt={item.text} className="orbit-img" />
-                {/* TEXT OVERLAY - HOVER PANNUM POTHU THERIYUM */}
-                <div className="image-text-overlay">
-                  {item.text}
+        {/* ORBIT WRAPPER: pause-orbit class state-ai poruthu add aagum */}
+        <div className={`orbit-wrapper-main ${pauseOrbit ? "pause-orbit" : ""}`}>
+          {orbitalImages.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`orbit-item ${active === index ? "active" : ""}`}
+                style={{
+                  "--index": index,
+                  "--total": orbitalImages.length
+                }}
+                onClick={() => {
+                  // Click panna active index set aagum + rotation toggle aagum
+                  setActive(active === index ? null : index);
+                  setPauseOrbit(active === index ? false : true); 
+                }}
+              >
+                <div className="stabilizer">
+                  <img src={item.img} alt="mars manufacturing" className="orbit-img" />
+                  
+                  <div className="view-overlay">VIEW</div>
+
+                  <div className="orbit-content">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

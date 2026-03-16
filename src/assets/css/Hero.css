@@ -216,8 +216,8 @@
 /* Container for both bottom boxes */
 .hero-bottom-container {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 20px;
+  left: 20px;
   height:15vh ;
   z-index: 100;
   display: flex !important;
@@ -401,7 +401,6 @@
 
 @media (max-width: 2560px) {
   .info-box-elite {
-    bottom: 5% !important;
      height:110px !important;
   }
   
@@ -541,7 +540,7 @@
     left:1%!important;
   }
   .truck-img{
-    width:70% !important;
+    width:65% !important;
 
     
   }
@@ -587,12 +586,12 @@
 }
 
 /* Mobile */
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   
 
   .truck-foreground {
     width:90% !important;
-    top: 43% !important; /* Mobile-la truck perusa theriyanum */
+    top: 40% !important; /* Mobile-la truck perusa theriyanum */
     left:1%!important;
   }
   .truck-img{
@@ -606,7 +605,7 @@
     
   }
   .mars-text-bg{
-    top:30%!important;
+    top:26%!important;
     left:15% !important;
     width:50%!important;
     transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
@@ -620,22 +619,26 @@
   z-index: 100;
   display: flex !important;
   flex-direction: row !important;
+  align-items:end !important;
 }
 
 .info-arrow-bottom {
   position: absolute;
   right: 2px;
-  top: 40px;
+  top: 10px !important;
   font-size: 30px;
   font-weight: bold;
+}
+.info-title{
+  font-size:7px  !important;
 }
 .info-box-elite {
   background: #ffffff;
   display: flex !important;
   padding: 10px;
   gap: 15px;
-  width: 60vw;
-  height: 15vh !important;
+  width: 40vw !important;
+  height: 10vh !important;
   align-items: center;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -654,7 +657,7 @@
 
   .truck-foreground {
     width:90% !important;
-    top: 44% !important; /* Mobile-la truck perusa theriyanum */
+    top: 42% !important; /* Mobile-la truck perusa theriyanum */
     left:1%!important;
   }
   .truck-img{
@@ -668,7 +671,7 @@
     
   }
   .mars-text-bg{
-    top:35%!important;
+    top:28%!important;
     left:10% !important;
     width:50%!important;
     transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1)
@@ -678,10 +681,11 @@
   position: absolute;
   bottom:125px !important;
   left: 50px;
-  height:11vh !important ;
+  height:8vh !important ;
   z-index: 100;
   display: flex !important;
   flex-direction: column !important;
+  align-items:start !important; 
   
 }
 

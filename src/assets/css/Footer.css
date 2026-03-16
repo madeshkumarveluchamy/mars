@@ -1,3 +1,11 @@
+:root {
+  --color: white;
+  --size: 80px;      /* Total icon size */
+  --thickness: 4px;  /* Line thickness */
+  --corner-len: 15px; /* How long the L-shape sides are */
+  --borderr:rgba(255,255,255,0.1)
+}
+
 .footer-section {
     background-color: #000;
 }
@@ -51,11 +59,23 @@
 
 /* Vertical Divider Logic */
 .border-start-custom {
-    border-left: 1px solid #fff;
+    padding-top:3px !important;
+    border-left: 1px solid var(--borderr);
+    border-top: 1px solid var(--borderr);
+    border-bottom:1px solid var(--borderr);
 }
+
+.border-first-custom {
+    padding-top:3px !important;
+    border-top: 1px solid var(--borderr);
+    border-bottom:1px solid var(--borderr);
+}
+
 
 /* Get Quote Button Style */
 /* --- UNIVERSAL BUTTON STYLE (index.css) --- */
+
+
 .blog-swap-Footer {
     display: flex;
     align-items: center;
@@ -64,7 +84,7 @@
     border: 1px solid #fff;
     padding: 0;
     cursor: pointer;
-    position: relative;
+    position:relative;
     /* Responsive Widths */
     width: 190px; 
     height: 48px;
@@ -103,7 +123,7 @@
 /* --- THE HOVER MOTION --- */
 /* Arrow moves to the very end of the button */
 .blog-swap-Footer:hover .arrow {
-    transform: translateX(138px) !important; /* 200px button - 50px arrow = 150px shift */
+    transform: translateX(280%) !important; /* 200px button - 50px arrow = 150px shift */
 }
 
 /* Text moves to the left side */
@@ -114,8 +134,10 @@
 .blog-swap-Footer:hover{
     transform:scale(1.1);
 }
+
 /* Mobile Responsiveness (For Phone Screens) */
 @media (max-width: 576px) {
+  
     .blog-swap-Footer {
         width: 170px; /* Smallest screens-kku button size kuraiyum */
         height: 42px;
@@ -133,14 +155,105 @@
     .blog-swap-Footer:hover .text {
         transform: translateX(-35px);
     }
+    .icon-frame {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left:40vw !important;  
+}
 }
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .border-start-custom {
-        border-left: none;
-        border-top: 1px solid #fff;
-        padding-top: 30px;
-        margin-top: 30px;
-    }
     .footer-main-title { font-size: 24px; }
+    .footer-desc{
+        width:100% !important;
+    }
+    .border-start-custom {
+    padding-top:3px !important;
+    border-bottom:1px solid var(--borderr);
+    border-left:none;
+}
+
+.border-first-custom {
+    padding-top:3px !important;
+    border-bottom:1px solid var(--borderr)  ;
+    border-left:none;
+}
+}
+.footer-desc{
+    width:50%;
+}
+.icons-div{
+    position:relative;
+    width: var(--size);
+  height: var(--size);
+ 
+}
+
+
+
+.icon-frame {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);  
+}
+
+/* Base style for all 4 corners */
+.corner {
+  position: absolute;
+  width: var(--corner-len);
+  height: var(--corner-len);
+}
+
+/* Individual Corner Borders */
+.top-left {
+  top: 0; left: 0;
+  border-top: var(--thickness) solid var(--color);
+  border-left: var(--thickness) solid var(--color);
+}
+
+.top-right {
+  top: 0; right: 0;
+  border-top: var(--thickness) solid var(--color);
+  border-right: var(--thickness) solid var(--color);
+}
+
+.bottom-left {
+  bottom: 0; left: 0;
+  border-bottom: var(--thickness) solid var(--color);
+  border-left: var(--thickness) solid var(--color);
+}
+
+.bottom-right {
+  bottom: 0; right: 0;
+  border-bottom: var(--thickness) solid var(--color);
+  border-right: var(--thickness) solid var(--color);
+}
+
+/* The Arrow */
+.arrow-footer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  border-top: var(--thickness) solid var(--color);
+  border-right: var(--thickness) solid var(--color);
+  /* Move arrow slightly to center it visually */
+  transform: translate(-60%, -40%); 
+  border-radius:4px!important;
+}
+
+/* The Arrow Diagonal Line */
+.arrow-footer::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -1px;
+  width: 150%;
+  height: var(--thickness);
+  background: var(--color);
+  transform: rotate(-45deg);
+  transform-origin: top right;
+  border-radius:10px !important;
 }

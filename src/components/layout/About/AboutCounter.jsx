@@ -26,7 +26,7 @@ const SlotCounter = ({ value, baseDirection = "up" }) => {
               transition={{
                 duration: 2.5,
                 ease: [0.45, 0.05, 0.55, 0.95],
-                delay: i * 0.1, 
+                delay: i * 0.1,
               }}
               className="digit-strip"
             >
@@ -34,7 +34,7 @@ const SlotCounter = ({ value, baseDirection = "up" }) => {
                 <>
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => <span key={num}>{num}</span>)}
                   <span>{digit}</span>
-                </>
+                </>  
               ) : (
                 <>
                   <span>{digit}</span>
@@ -67,15 +67,15 @@ const AboutCounter = () => {
             </h2>
           </div>
 
-          <div className="row g-0 leadership-grid" style={{width:"100%"}}>
+          <div className="row g-0 leadership-grid " style={{width:"100%"}}>
             {leadershipData.map((item, index) => (
               <div key={index} className="col-lg-3 col-md-6 leadership-card">
-                <div className="card-content-wrapper">
+                <div className="card-content-wrapper text-center text-lg-start">
                   <h6 className="card-mini-title">{item.title}</h6>
                   <p className="card-desc-text">{item.desc}</p>
                   
                   {/* HORIZONTAL ALIGNMENT FORCE */}
-                  <h1 className="card-big-number">
+                  <h1 className="card-big-number d-flex justify-content-center justify-content-lg-start">
                     <SlotCounter value={item.count} baseDirection="up" />
                     <span className="stat-suffix">{item.suffix}</span>
                   </h1>
