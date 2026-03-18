@@ -1,4 +1,45 @@
- /* Main Section */
+/* Custom Max-Width for Ultra-Wide Screens (2560px) */
+@media (min-width: 1400px) {
+  .container-xxl, .container {
+    max-width: 1320px; /* Standard Bootstrap XXL */
+  }
+}
+
+/* Specific fix for your 2560px screen */
+@media (min-width: 2000px) {
+  .container-xxl, .container {
+    max-width: 1800px; /* This makes the content wider to match your 2nd image */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Adjusting the heading size for massive screens so it doesn't look small */
+  .about-heading {
+    font-size: 48px !important; 
+    line-height: 1.2;
+  }
+
+ 
+}
+.welding-img-wrapper {
+    /* CHANGED: Removed 93% height and lowered min-height */
+    height: 800px !important; Set a specific height that looks good to you */
+    min-height: 350px !important; 
+    overflow: hidden;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.08);
+    
+    /* ADDED: This ensures the image stays centered within the new height */
+    display: flex;
+    align-items: center;
+}
+
+.welding-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    /* This is critical: it clips the image instead of stretching it */
+    object-fit: cover; 
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .about-section {
     background: #ffffff;
     color: #000;

@@ -42,7 +42,7 @@ const FAQSection = () => {
         <div className="faq-list mt-5">
           {faqs.map((faq, index) => (
             <div key={index} className="faq-row py-4 px-3 border-bottom border-secondary">
-              <div className="row align-items-center text-center text-lg-start">
+              <div className="row align-items-center text-center text-lg-start py-1 py-lg-2">
                 {/* Number */}
                 <div className="col-md-1">
                   <span className="faq-number fw-bold ">{faq.id}</span>

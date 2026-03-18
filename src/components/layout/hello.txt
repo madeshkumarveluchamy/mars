@@ -488,3 +488,152 @@ export default Navbar;
     /* Remove the external button on mobile */
     .build-action-btn { display: none !important; }
 }
+
+
+
+
+
+
+
+
+
+
+
+1111111111111111111111111111\111111111111111111111111111111111111111111111111
+.sustainable-section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 100px 0;
+}
+
+.orbital-container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ORBIT ANIMATION */
+.orbit-wrapper-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: orbitRotate 45s linear infinite;
+}
+
+.orbit-wrapper-main.pause-orbit {
+  animation-play-state: paused;
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* INDIVIDUAL ITEMS */
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -90px;
+  transform: rotate(calc(var(--index) * (360deg / var(--total)))) translate(320px);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* STABILIZER (Keeps image upright) */
+.stabilizer {
+  width: 100%;
+  height: 100%;
+  animation: orbitRotate 45s linear infinite reverse;
+}
+
+.pause-orbit .stabilizer {
+  animation-play-state: paused;
+}
+
+.orbit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.orbit-img.hide-img {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* CONTENT BOX */
+.orbit-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4facfe;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  color: white;
+}
+
+.orbit-content.show-content {
+  opacity: 1;
+  transform: scale(1.1); /* Slightly pops out */
+  pointer-events: auto;
+}
+
+.orbit-content h4 { font-size: 14px; margin-bottom: 5px; font-weight: 800; }
+.orbit-content p { font-size: 11px; line-height: 1.2; }
+
+/* CENTER CONTENT */
+.center-content { z-index: 20; max-width: 450px; }
+.sub-label { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #666; }
+.main-title { font-size: 28px; font-weight: 900; margin: 15px 0; line-height: 1.2; }
+
+/* BUTTON */
+.drive-btn {
+  display: inline-flex;
+  border: 2px solid #000;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+.arrow-sus { background: #fff; padding: 15px; border-right: 2px solid #000; }
+.text-sus { background: #000; color: #fff; padding: 15px 25px; font-weight: 800; font-size: 12px; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .orbital-container { width: 320px; height: 320px; }
+  .orbit-item { 
+    width: 90px; height: 65px; 
+    margin-top: -32px; margin-left: -45px;
+    transform: rotate(calc(var(--index) * (360deg / var(--total)))) translate(140px);
+  }
+  .main-title { font-size: 14px; }
+  .center-content { transform: scale(0.85); }
+  .orbit-content h4 { font-size: 10px; }
+  .orbit-content p { font-size: 8px; }
+}

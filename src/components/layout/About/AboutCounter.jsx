@@ -58,7 +58,7 @@ const AboutCounter = () => {
   ];
 
   return (
-    <section className="about-counter-section py-5">
+    <section className="about-counter-section py-5" data-bg="black">
       <div className="container-xxl">
         <div className=" mt-5 pt-5 border-top">
           <div className="text-center mb-5">
@@ -67,7 +67,7 @@ const AboutCounter = () => {
             </h2>
           </div>
 
-          <div className="row g-0 leadership-grid " style={{width:"100%"}}>
+          <div className="row g-0 leadership-grid " style={{width:"100% !important  "}}>
             {leadershipData.map((item, index) => (
               <div key={index} className="col-lg-3 col-md-6 leadership-card">
                 <div className="card-content-wrapper text-center text-lg-start">

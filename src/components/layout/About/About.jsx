@@ -59,7 +59,7 @@ const About = () => {
 
   return (
     <section className="about-section py-5" data-bg="black" id="about">
-      <div className="container">
+      <div className="container-xxl">
       
         <div className="row mb-5 align-items-center stats-row d-flex flex-md-row-reverse">
 
@@ -122,7 +122,7 @@ const About = () => {
                     <img src={service.icon} alt={service.title} className="service-geometric-icon" />
                   </div>
                   <h6 className="fw-bold mb-3 service-title d-flex justify-content-center justify-content-lg-start">{service.title}</h6>
-                  <p className="small text-muted mb-3 service-desc">{service.desc}</p>
+                  <p className="small text-muted mb-3 service-desc  d-flex justify-content-center text-center justify-content-lg-start">{service.desc}</p>
                   <a href="#" className="view-more text-decoration-none fw-bold p-4">VIEW MORE →</a>
               
                 </div>
@@ -132,7 +132,7 @@ const About = () => {
           </div>
           <div className="col-lg-6">
             <div className="welding-img-wrapper shadow-lg">
-              <img src="/weldinglorrybody.png" alt="Manufacturing" className="img-fluid h-100 w-100 object-fit-cover" />
+              <img src="/weldinglorrybody.png" alt="Manufacturing" className="img-fluid h-100 w-100 object-fit-cover welding-img welding-img-wrapper" />
             </div>
           </div>
         </div>

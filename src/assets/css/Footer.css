@@ -123,7 +123,7 @@
 /* --- THE HOVER MOTION --- */
 /* Arrow moves to the very end of the button */
 .blog-swap-Footer:hover .arrow {
-    transform: translateX(280%) !important; /* 200px button - 50px arrow = 150px shift */
+    transform: translateX(305%) !important; /* 200px button - 50px arrow = 150px shift */
 }
 
 /* Text moves to the left side */

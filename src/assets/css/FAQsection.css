@@ -127,6 +127,10 @@
     transform: translateX(150px); /* 200px button - 50px arrow = 150px shift */
 }
 
+.blog-swap-FAQ:hover{
+    transform:scale(1.2npm);
+}
+
 /* Text moves to the left side */
 .blog-swap-FAQ:hover .text {
     transform: translateX(-45px); 

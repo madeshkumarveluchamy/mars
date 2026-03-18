@@ -62,7 +62,7 @@ const WorkInGallery = () => {
               {/* Bottom Description Area */}
           <div className="row mt-5 d-flex flex-column w-100 align-items-start">
             <div className="col-lg-7">
-              <p className="gallery-desc">
+              <p className="gallery-desc d-flex justify-content-center justify-content-md-start text-center text-md-start">
                 Innovation guides us from planning to execution, helping us implement smarter processes, 
                 advanced technology, and sustainable solutions throughout all stages of energy development.
               </p>

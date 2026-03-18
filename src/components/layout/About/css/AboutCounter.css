@@ -1,3 +1,27 @@
+/* Custom Max-Width for Ultra-Wide Screens (2560px) */
+@media (min-width: 1400px) {
+  .container-xxl, .container {
+    max-width: 1320px; /* Standard Bootstrap XXL */
+  }
+}
+
+/* Specific fix for your 2560px screen */
+@media (min-width: 2000px) {
+  .container-xxl, .container {
+    max-width: 1800px; /* This makes the content wider to match your 2nd image */
+    margin-left: auto;
+    margin-right: auto;
+    transition:all 0.9s ease !important;
+  }
+
+  /* Adjusting the heading size for massive screens so it doesn't look small */
+  .about-heading {
+    font-size: 48px !important; 
+    line-height: 1.2;
+  }
+
+ 
+}
 /* --- Global Section & Grid Styling --- */
 .about-counter-section { background: #ffffff;  }
 
@@ -5,7 +29,6 @@
     border: 1px solid #eeeeee; 
     background: #fff; 
     margin-top: 40px;
-    max-width:1400px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
