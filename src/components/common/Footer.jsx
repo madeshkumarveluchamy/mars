@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/css/Footer.css";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -42,9 +43,9 @@ const Footer = () => {
                   efficient and responsible production practices.
                 </p>
                 <div className="w-100 d-flex justify-content-center align-items-center justify-content-lg-start">
-                <button className="mt-3 blog-swap-Footer">
-                  <span className="arrow">→</span>
-                  <span className="text">GET A QUOTE</span>
+                <button className="mt-3 blog-swap-Footers">
+                  <span className="arrows">→</span>
+                  <span className="texts">GET A QUOTE</span>
                 </button>
                </div>
               </div>
@@ -65,7 +66,7 @@ const Footer = () => {
             </div>
 
             {/* Quick Links Column */}
-            <div className="col-md-2 footer-col px-md-4 border-start-custom ">
+            <div className="col-md-2 px-md-4 border-starts-custom">
               <h6 className="footer-label mb-4 mt-3 text-center text-lg-start">QUICK LINKS</h6>
               <ul className="list-unstyled footer-links text-center text-lg-start">
                 <li>
@@ -74,41 +75,41 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/about" className="text-white">
+                  <Link to="/about" className="text-white">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/solutions" className="text-white">
+                  <Link to="/service" className="text-white">
                     Mars Solution
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contact" className="text-white">
+                  <Link to="/contact" className="text-white">
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/blog" className="text-white">
+                  <Link to="/blog" className="text-white">
                     Blog
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
             {/* Utility Pages Column */}
-            <div className="col-md-3 footer-col ps-md-4 border-start-custom">
+            <div className="col-md-3 footer-col ps-md-4 border-starts-custom">
               <h6 className="footer-label mb-4 mt-3 text-center text-lg-start">UTILITY PAGES</h6>
               <ul className="list-unstyled footer-links text-center text-lg-start">
                 <li>
-                  <a href="/gallery" className="text-white">
+                  <Link to="/gallery" className="text-white">
                     Gallery
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/quote" className="text-white">
+                  <Link to="/contact" className="text-white">
                     Get Quote
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/terms" className="text-white">

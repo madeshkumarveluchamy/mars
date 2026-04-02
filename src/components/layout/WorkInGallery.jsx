@@ -28,7 +28,7 @@ const WorkInGallery = () => {
         
         {/* Section Title */}
         <div className="text-center mb-5">
-          <h2 className="gallery-main-title">
+          <h2 className="gallery-main-titles">
             OUR WORK IN ACTION <br /> GALLERY
           </h2>
         </div>

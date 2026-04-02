@@ -26,11 +26,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="faq-section bg-black text-white py-5" data-bg="white">
+    <section className="faq-ssection bg-black text-white py-5" data-bg="white">
       <div className="container-xxl py-5">
         {/* Main Title */}
         <div className="text-center mb-5">
-          <h2 className="faq-main-title">
+          <h2 className="faq-smain-title">
             POWERING DELIVERING RELIABLE <br />
             HEAVY VEHICLE BODY SOLUTIONS <br />
             FOR DIVERSE INDUSTRIES THROUGH <br />
@@ -39,25 +39,25 @@ const FAQSection = () => {
         </div>
 
         {/* FAQ Rows Container */}
-        <div className="faq-list mt-5">
+        <div className="faq-slist mt-5">
           {faqs.map((faq, index) => (
-            <div key={index} className="faq-row py-4 px-3 border-bottom border-secondary">
+            <div key={index} className="faq-srow py-4 px-3 border-bottom border-secondary">
               <div className="row align-items-center text-center text-lg-start py-1 py-lg-2">
                 {/* Number */}
                 <div className="col-md-1">
-                  <span className="faq-number fw-bold ">{faq.id}</span>
+                  <span className="faq-snumber fw-bold ">{faq.id}</span>
                 </div>
                 {/* Question */}
                 <div className="col-md-5">
-                  <h6 className="faq-question fw-bold mb-0 text-uppercase">{faq.question}</h6>
+                  <h6 className="faq-squestion fw-bold mb-0 text-uppercase">{faq.question}</h6>
                 </div>
                 {/* Answer */}
                 <div className="col-md-5">
-                  <p className="faq-answer small mb-0">{faq.answer}</p>
+                  <p className="faq-sanswer small mb-0">{faq.answer}</p>
                 </div>
                 {/* Arrow Icon */}
                 <div className="col-md-1 text-end">
-                  <span className="faq-arrow">→</span>
+                  <span className="faq-sarrow">→</span>
                 </div>
               </div>
             </div>

@@ -80,8 +80,8 @@
     z-index: 5;
 }
 
-/* THE ARROW (Left to Right Slide) */
-.blog-swap-success .arrow {
+/* THE arrow-success (Left to Right Slide) */
+.blog-swap-success .arrow-success {
     position: absolute;
     left: 0;
     border: 1px solid #000;
@@ -97,13 +97,13 @@
     z-index: 2;
 }
 
-/* THE TEXT (Right to Left Slide) */
-.blog-swap-success .text {
+/* THE text-successs (Right to Left Slide) */
+.blog-swap-success .text-successs {
     width: 100%;
     border: 1px solid #000;
 
-    text-align: center;
-    padding-left: 45px; /* Arrow space-ai thavirkka */
+    text-successs-align: center;
+    padding-left: 45px; /* arrow-success space-ai thavirkka */
     font-size: 11px;
     font-weight: 800;
     white-space: nowrap;
@@ -111,13 +111,13 @@
 }
 
 /* --- THE HOVER MOTION --- */
-/* Arrow moves to the very end of the button */
-.blog-swap-success:hover .arrow {
-    transform: translateX(150px); /* 200px button - 50px arrow = 150px shift */
+/* arrow-success moves to the very end of the button */
+.blog-swap-success:hover .arrow-success {
+    transform: translateX(150px); /* 200px button - 50px arrow-success = 150px shift */
 }
 
-/* Text moves to the left side */
-.blog-swap-success:hover .text {
+/* text-successs moves to the left side */
+.blog-swap-success:hover .text-successs {
     transform: translateX(-45px); 
 }
 
@@ -132,17 +132,17 @@
         height: 42px;
 
     }
-    .blog-swap-success .arrow {
+    .blog-swap-success .arrow-success {
         width: 42px;
     }
-    .blog-swap-success .text {
+    .blog-swap-success .text-successs {
         font-size: 9px;
         padding-left: 35px;
     }
-    .blog-swap-success:hover .arrow {
+    .blog-swap-success:hover .arrow-success {
         transform: translateX(128px); /* 170px - 42px */
     }
-    .blog-swap-success:hover .text {
+    .blog-swap-success:hover .text-successs {
         transform: translateX(-35px);
     }
 }

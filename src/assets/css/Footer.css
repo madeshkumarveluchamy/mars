@@ -48,7 +48,7 @@
 
 .footer-links a {
     color: #6c757d;
-    text-decoration: none;
+    texts-decoration: none;
     font-size: 13px;
     transition: 0.3s;
 }
@@ -58,7 +58,7 @@
 }
 
 /* Vertical Divider Logic */
-.border-start-custom {
+.border-starts-custom {
     padding-top:3px !important;
     border-left: 1px solid var(--borderr);
     border-top: 1px solid var(--borderr);
@@ -76,7 +76,7 @@
 /* --- UNIVERSAL BUTTON STYLE (index.css) --- */
 
 
-.blog-swap-Footer {
+.blog-swap-Footers {
     display: flex;
     align-items: center;
     background: #000;
@@ -93,8 +93,8 @@
     z-index: 5;
 }
 
-/* THE ARROW (Left to Right Slide) */
-.blog-swap-Footer .arrow {
+/* THE arrows (Left to Right Slide) */
+.blog-swap-Footers .arrows {
     position: absolute;
     left: 0;
     background: #fff;
@@ -109,11 +109,11 @@
     z-index: 2;
 }
 
-/* THE TEXT (Right to Left Slide) */
-.blog-swap-Footer .text {
+/* THE texts (Right to Left Slide) */
+.blog-swap-Footers .texts {
     width: 100%;
-    text-align: center;
-    padding-left: 45px; /* Arrow space-ai thavirkka */
+    texts-align: center;
+    padding-left: 45px; /* arrows space-ai thavirkka */
     font-size: 11px;
     font-weight: 800;
     white-space: nowrap;
@@ -121,38 +121,38 @@
 }
 
 /* --- THE HOVER MOTION --- */
-/* Arrow moves to the very end of the button */
-.blog-swap-Footer:hover .arrow {
-    transform: translateX(305%) !important; /* 200px button - 50px arrow = 150px shift */
+/* arrows moves to the very end of the button */
+.blog-swap-Footers:hover .arrows {
+    transform: translateX(280%) !important; /* 200px button - 50px arrows = 150px shift */
 }
 
-/* Text moves to the left side */
-.blog-swap-Footer:hover .text {
+/* texts moves to the left side */
+.blog-swap-Footers:hover .texts {
     transform: translateX(-45px); 
 }
 
-.blog-swap-Footer:hover{
+.blog-swap-Footers:hover{
     transform:scale(1.1);
 }
 
 /* Mobile Responsiveness (For Phone Screens) */
 @media (max-width: 576px) {
   
-    .blog-swap-Footer {
+    .blog-swap-Footers {
         width: 170px; /* Smallest screens-kku button size kuraiyum */
         height: 42px;
     }
-    .blog-swap-Footer .arrow {
+    .blog-swap-Footers .arrows {
         width: 42px;
     }
-    .blog-swap-Footer .text {
+    .blog-swap-Footers .texts {
         font-size: 9px;
         padding-left: 35px;
     }
-    .blog-swap-Footer:hover .arrow {
+    .blog-swap-Footers:hover .arrows {
         transform: translateX(128px) ; /* 170px - 42px */
     }
-    .blog-swap-Footer:hover .text {
+    .blog-swap-Footers:hover .texts {
         transform: translateX(-35px);
     }
     .icon-frame {
@@ -164,11 +164,11 @@
 }
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .footer-main-title { font-size: 24px; }
-    .footer-desc{
-        width:100% !important;
-    }
-    .border-start-custom {
+.footer-main-title { font-size: 24px; }
+.footer-desc{
+    width:100% !important;
+}
+.border-starts-custom {
     padding-top:3px !important;
     border-bottom:1px solid var(--borderr);
     border-left:none;
@@ -230,7 +230,7 @@
   border-right: var(--thickness) solid var(--color);
 }
 
-/* The Arrow */
+/* The arrows */
 .arrow-footer {
   position: absolute;
   top: 50%;
@@ -239,12 +239,12 @@
   height: 30%;
   border-top: var(--thickness) solid var(--color);
   border-right: var(--thickness) solid var(--color);
-  /* Move arrow slightly to center it visually */
+  /* Move arrows slightly to center it visually */
   transform: translate(-60%, -40%); 
   border-radius:4px!important;
 }
 
-/* The Arrow Diagonal Line */
+/* The arrows Diagonal Line */
 .arrow-footer::after {
   content: '';
   position: absolute;

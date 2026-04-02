@@ -62,8 +62,8 @@ const SuccessStories = () => {
               </p>
               <div className='w-100 d-flex justify-content-center '>
               <button className="blog-swap-success p-1">
-                <span className="arrow">→</span>
-                <span className="text">EXPLORE OUR BLOG</span>
+                <span className="arrow-success">→</span>
+                <span className="text-successs">EXPLORE OUR BLOG</span>
               </button>
               </div> 
             </div>

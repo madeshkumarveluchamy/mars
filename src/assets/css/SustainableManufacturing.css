@@ -1,3 +1,139 @@
+.blog-swap-sustain {
+    display: flex;
+    align-items: center;
+    background: #000 !important ;
+    color: #fff !important;
+    border: 1px solid #000;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    /* Responsive Widths */
+    width: 200px !important; 
+    height: 60px;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+
+.truck-img:hover{
+  transform:scale(1.1);
+}
+.massive-text-sustain:hover{
+  transform:scale(1.1);
+}
+/* THE arrow-sustain (Left to Right Slide) */
+.blog-swap-sustain .arrow-sustain {
+    position: absolute;
+    left: 0;
+    background: #fff !important;
+    color: #000  !important;
+    width: 50px; 
+    height: 85%!important;
+    margin:3px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth Cubic-Bezier Transition */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    z-index: 2;
+}
+
+/* THE text-sustain (Right to Left Slide) */
+.blog-swap-sustain .text-sustain {
+    width: 100%;
+    text-sustain-align: center;
+    padding-left: 45px; /* arrow-sustain space-ai thavirkka */
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE HOVER MOTION --- */
+/* arrow-sustain moves to the very end of the button */
+.blog-swap-sustain:hover .arrow-sustain {
+    transform: translateX(280%); /* 200px button - 50px arrow-sustain = 150px shift */
+}
+
+/* text-sustain moves to the left side */
+.blog-swap-sustain:hover .text-sustain {
+    transform: translateX(-45px); 
+}
+.blog-swap-sustain:hover{
+  transform: scale(1.01) !important;
+}
+.massive-text-sustain{
+  font-family: 'Michroma', sans-serif !important;
+  text-sustain-transform: uppercase;
+  text-sustain-shadow: 8px 0px 0px currentColor, -1px 0px 0px currentColor;
+}
+
+.info-title{
+  font-family: 'Michroma', sans-serif !important;
+  text-sustain-transform: uppercase;
+}
+
+@media (max-width: 1440px) {
+    .blog-swap-sustain {
+        width: 170px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-sustain .arrow-sustain {
+        width: 42px;
+    }
+    .blog-swap-sustain .text-sustain {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-sustain:hover .arrow-sustain {
+        transform: translateX(115px) !important; /* 170px - 42px */
+    }
+    .blog-swap-sustain:hover .text-sustain {
+        transform: translateX(-35px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-swap-sustain {
+        width: 150px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-sustain .arrow-sustain {
+        width: 42px;
+    }
+    .blog-swap-sustain .text-sustain {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-sustain:hover .arrow-sustain {
+        transform: translateX(107px) !important; /* 170px - 42px */
+    }
+    .blog-swap-sustain:hover .text-sustain {
+        transform: translateX(-35px);
+    }
+}
+
+/* Mobile Responsiveness (For Phone Screens) */
+@media (max-width: 576px) {
+    .blog-swap-sustain { /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-sustain .arrow-sustain {
+        width: 42px;
+    }
+    .blog-swap-sustain .text-sustain {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-sustain:hover .arrow-sustain {
+        transform: translateX(99px) !important; /* 170px - 42px */
+    }
+    .blog-swap-sustain:hover .text-sustain {
+        transform: translateX(-35px);
+    }
+}
+
 .sustainable-section {
   background-color: #ffffff;
   /* Top/Bottom hide aaguratha thadukka min-height mukkiyam */
@@ -443,7 +579,7 @@
 }
 /* CONTENT CARD */
 
-.orbit-content{
+.orbit-contents{
 
 position:absolute;
 
@@ -456,8 +592,8 @@ transform:translateX(-50%);
 width:150px;
 height: 110px;
 
-background:#4facfe;
-
+background:#e38524;
+color:#ffffff;
 border-radius:12px;
 
 padding:12px;
@@ -476,7 +612,7 @@ transition:.35s ease;
 
 /* SHOW WHEN CLICK */
 
-.orbit-item.active .orbit-content{
+.orbit-item.active .orbit-contents{
 
 bottom:-10px;
 
@@ -516,7 +652,7 @@ transition:.3s;
 .orbit-item:hover .view-overlay{
 opacity:1;
 }
-.orbit-content h4{
+.orbit-contents h4{
 font-size:12px;         /* smaller title */
 font-weight:700;
 margin-bottom:4px;
@@ -528,7 +664,7 @@ MOBILE VIEW (768px ↓)
 
 @media (max-width:768px){
 
-.orbit-content{
+.orbit-contents{
 
 bottom:-120px;          /* hide distance mobile */
 left:50%;
@@ -538,7 +674,7 @@ transform:translateX(-50%);
 width:85px;            /* smaller card */
 height:auto;
 
-background:#4facfe;
+background:#e38524 !important;
 
 border-radius:10px;
 
@@ -557,7 +693,7 @@ transition:.35s ease;
 
 /* show when click */
 
-.orbit-item.active .orbit-content{
+.orbit-item.active .orbit-contents{
 
 bottom:-6px;
 
@@ -569,7 +705,7 @@ pointer-events:auto;
 
 /* title */
 
-.orbit-content h4{
+.orbit-contents h4{
 
 font-size:10px;
 
@@ -585,7 +721,7 @@ color:#fff;
 
 /* description */
 
-.orbit-content p{
+.orbit-contents p{
 
 font-size:8px;
 
@@ -593,6 +729,9 @@ line-height:1.2;
 
 color:#0b0b0b;
 
+}
+.orbit-contents:hover p{
+  color:#ffffff !important;
 }
 
 /* overlay */
@@ -637,7 +776,7 @@ font-size:11px;
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.orbit-item:hover .orbit-content{
+.orbit-item:hover .orbit-contents{
 
 bottom:-10px;
 
@@ -683,8 +822,8 @@ animation-play-state: paused !important;
 
 /* touch show content */
 
-.orbit-item:active .orbit-content,
-.orbit-item:focus-within .orbit-content{
+.orbit-item:active .orbit-contents,
+.orbit-item:focus-within .orbit-contents{
 
 bottom:-10px;
 opacity:1;

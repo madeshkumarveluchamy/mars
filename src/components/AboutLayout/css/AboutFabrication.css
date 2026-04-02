@@ -1,0 +1,43 @@
+.protocol-card {
+  padding: 20px;
+  background: transparent;
+  /* This ensures any manual CSS transitions are smooth too */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.protocol-icon-img{
+  height:25px !important;
+  width:25px !important;
+}
+
+
+.protocol-num-img {
+  height: 20px !important;
+  width: 50px !important;
+  transition: opacity 0.3s ease;
+}
+
+.protocol-card:hover{
+  background:#e38524;
+  scale:1.1;
+  opacity:0.9;
+}
+
+/* When the user hovers, the number becomes slightly darker */
+.protocol-card:hover .protocol-num-img {
+  opacity: 1.5;
+  ;
+}
+
+.protocol-card-title {
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+.protocol-card:hover .protocol-card-desc{
+  color:#ffffff;
+}
+
+/* Optional: change title color on hover to your orange theme */
+.protocol-card:hover .protocol-card-title {
+  color: #ffffff;
+}

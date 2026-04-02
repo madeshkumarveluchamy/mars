@@ -20,22 +20,28 @@
     position: absolute;
     /* Responsive Widths */
     width:250px; 
-    height: 50px;
+    min-height: 45px;
     overflow: hidden; 
     transition: transform 0.9s ease !important;
     z-index: 5;
     border-radius:8px;
     top:35%;
+    
+}
+
+.blog:hover{
+
+  transform:scale(1.1);
 }
 
 /* THE ARROW (Left to Right Slide) */
 .blog .arrow {
     position: absolute;
-    left: 0;
+    left: 2PX;
     background: #000;
     color: #fff;
     width: 18%; 
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,16 +67,16 @@
 /* --- THE HOVER MOTION --- */
 /* Arrow moves to the very end of the button */
 .blog:hover .arrow {
-    transform: translateX(460%); /* 200px button - 50px arrow = 150px shift */
+    transform: translateX(460%); /* 200px button -n 50px arrow = 150px shift */
+    transition:all 0.8s !important;
 }
 
 /* Text moves to the left side */
 .blog:hover .text {
     transform: translateX(-45px); 
+    transition:all 0.8s !important;
 }
-.blog:hover{
-  transaction: scale(1.1) !important;
-}
+
 
 
 

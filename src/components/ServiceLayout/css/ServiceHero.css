@@ -1,0 +1,43 @@
+/* Typography Details */
+.service-main-title {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 6.5rem); /* Responsive size */
+  line-height: 0.95;
+  letter-spacing: -2px;
+}
+.serviceHero{
+  padding-top:100px;
+}
+
+.text-orange {
+  color: #ff6a00; /* MARS Theme Orange */
+}
+
+.service-sub-text {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #a0a0a0;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.service-cta-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 16px 55px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.service-cta-btn:hover {
+  background-color: #ff6a00;
+  color: #ffffff;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 106, 0, 0.3);
+}

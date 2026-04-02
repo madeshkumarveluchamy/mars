@@ -1,0 +1,96 @@
+.v-workflow-bg {
+  background-color: #0E0E0E; /* Pure dark background */
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.v-workflow-title {
+  font-weight: 900;
+  font-size: 3.5rem; /* Larger Title */
+  letter-spacing: -2px;
+}
+
+.v-workflow-container {
+  max-width: 1200px; /* Wider container for a larger feel */
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* --- THE VERTICAL LINE --- */
+.v-base-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #222;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.v-filling-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  background-color: #E38524;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(227, 133, 36, 0.6);
+}
+
+/* --- LARGER STEP BOXES --- */
+.v-step-box-large {
+  width: 75px; /* Increased from 55px */
+  height: 75px;
+  background-color: #0E0E0E;
+  border: 2px solid #E38524;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.v-step-num-large {
+  color: #E38524;
+  font-weight: 900;
+  font-size: 1.5rem; /* Larger Numbers */
+}
+
+/* Content Styling */
+.v-step-content h3 {
+  font-weight: 900;
+  font-size: 1.8rem; /* Larger Step Titles */
+  letter-spacing: -0.5px;
+}
+
+.tracking-wide {
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+}
+
+/* Space out the steps more vertically */
+.v-step-row {
+  margin-bottom: 120px !important; 
+}
+
+/* Mobile Responsive */
+
+
+@media (max-width: 550px) {
+  .v-base-line, .v-filling-line { left: 10vw; transform: none; }
+  .v-step-box-large{left:30px ;}
+  .v-step-row { flex-direction: row-reverse!important; }
+  .col-5 { width: 85%; text-align: left !important; padding-left: 60px !important; }
+  .col-2 { width: 85px; position: absolute; left: 0; }
+  .v-workflow-title { font-size: 2.5rem; }
+  .service-title{
+    font-size:20px !important;
+
+  }
+  .service-desc{
+    font-size:10px !important;
+    
+  }
+}

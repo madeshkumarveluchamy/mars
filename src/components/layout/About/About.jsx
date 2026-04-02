@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "./css/About.css";
+import { Link } from "react-router-dom";
 
 // --- Step 1: Manual Vertical Slot Rolling Component ---
 const SlotCounter = ({ value, baseDirection = "up" }) => {
@@ -69,11 +70,15 @@ const About = () => {
               MARS Automotive Designers manufactures durable, precision-engineered heavy vehicle bodies built for demanding industrial and commercial applications.
             </h2>
             <p className="text-muted about-desc  text-center text-lg-start w-100">MARS Automotive Designers specializes in heavy-duty vehicle body manufacturing, delivering strong, durable, and precision-built solutions for industrial applications.</p>
+            
             <div className="d-flex justify-content-center justify-content-lg-start">
+           <Link to="/blog" className="text-decoration-none">
             <button className="blog-swap">
               <span className="arrow">→</span>
               <span className="text">EXPLORE OUR BLOG</span>
             </button>
+         
+            </Link>
             </div>
           </div>
 

@@ -1,0 +1,124 @@
+/* Section Background */
+.revolution-section {
+  background-color: #0b0b0b; /* Deep Industrial Black */
+  padding: 100px 0;
+  margin: 0;
+  color: #fff;
+}
+
+.revolution-title {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+}
+
+.revolution-subtitle {
+  font-size: 0.75rem;
+  color: #666;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* THE SLIDER CONTAINER */
+.comparison-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: ew-resize;
+  aspect-ratio: 16 / 9; /* Perfect for desktop and tablet */
+  border: 1px solid #1a1a1a;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.comparison-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.stock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 2px solid #e38524;
+}
+
+/* THE SLIDER LINE AND HANDLE */
+.slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e38524;
+  z-index: 3;
+}
+
+.slider-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-color: #e38524;
+  border: 4px solid #0b0b0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(227, 133, 36, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.comparison-wrapper:hover .slider-handle-circle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* PREMIUM BADGES */
+.badge-glass {
+  position: absolute;
+  top: 25px;
+  padding: 10px 20px;
+  font-weight: 900;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.badge-left {
+  left: 25px;
+  background: rgba(0,0,0,0.6);
+  color: #aaa;
+}
+
+.badge-right {
+  right: 25px;
+  background: rgba(227, 133, 36, 0.8);
+  color: #000;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+  .comparison-wrapper {
+    aspect-ratio: 4 / 3; /* Taller on mobile */
+  }
+  .revolution-title {
+    font-size: 2.2rem;
+  }
+  .badge-glass {
+    top: 15px;
+    padding: 6px 12px;
+    font-size: 0.55rem;
+  }
+}

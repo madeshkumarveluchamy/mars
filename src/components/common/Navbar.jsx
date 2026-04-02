@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../../assets/css/Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,11 +57,11 @@ const Navbar = () => {
   
           <div className="nav-links-area w-100 d-flex m-2">
             <div className="nav-links-list d-flex justify-content-evenly w-100 flex-wrap align-items-center">
-              <a href="#home" className="nav-item">HOME</a>
-              <a href="#about" className="nav-item">ABOUT</a>
-              <a href="#solutions" className="nav-item">MARS SOLUTIONS</a>
-              <a href="#contact" className="nav-item">CONTACT</a>
-              <a href="#blog" className="nav-item">BLOG</a>
+              <Link to="/" className="nav-item">HOME</Link>
+              <Link to="/about" className="nav-item">ABOUT</Link>
+              <Link to="/service" className="nav-item">MARS SOLUTIONS</Link>
+              <Link to="/contact" className="nav-item">CONTACT</Link>
+              <Link to="/blog" className="nav-item">BLOG</Link>
             </div>
           </div>
         </div>
@@ -72,10 +73,11 @@ const Navbar = () => {
               exit={{ opacity: 0, x: 20 }}
               className="external-button-box hide-mobile col-3 d-flex justify-content-center align-items-center d-none d-md-block"
             >
-              <button className="blog">
+              <Link to="/contact"><button className="blog">
                 <span className="arrow">→</span>
                 <span className="text">LET'S BUILD YOUR OWN VEHICLE</span>
               </button>
+              </Link>
             </motion.div>
         </AnimatePresence>
         )}

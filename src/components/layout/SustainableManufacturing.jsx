@@ -54,10 +54,10 @@ DELIVERED WITH SAFETY AND STRENGTH
 
 </h2>
 
-<button className="drive-btn">
+<button className="drive-btn blog-swap-sustain">
 
-<span className="arrow-sus">→</span>
-<span className="text-sus">DRIVE INNOVATION</span>
+<span className="arrow-sustain">→</span>
+<span className="text-sustain">DRIVE INNOVATION</span>
 
 </button>
 
@@ -117,7 +117,7 @@ VIEW
 
 </div>
 
-<div className="orbit-content">
+<div className="orbit-contents">
 
 <h4>{item.title}</h4>
 <p>{item.desc}</p>
