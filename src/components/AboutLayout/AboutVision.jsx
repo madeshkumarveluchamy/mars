@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './css/AboutVision.css';
-import data from "../../assets/visionbackground.png"
+import data1 from "../../assets/vision.jpg"
+import data2 from "../../assets/mission.jpg"
+import data3 from "../../assets/values.jpg"
 
 const Innovation = () => {
   const [activeIndex, setActiveIndex] = useState(1); 
@@ -9,17 +11,17 @@ const Innovation = () => {
     { 
       title: "VISION", 
       desc: "WE DON'T JUST BUILD VEHICLES; WE ENGINEER ASSETS. OUR PHILOSOPHY IS ROOTED IN THE UNCOMPROMISING STRENGTH OF STEEL AND THE PRECISION OF MODERN ROBOTICS.",
-      image: data 
+      image: data1
     },
     { 
       title: "MISSION", 
       desc: "To redefine industrial mobility through rigorous fabrication standards and modular design architecture that withstands the harshest environments on Earth.",
-      image: data 
+      image: data2
     },
     { 
       title: "OUR VALUES", 
       desc: "Structural integrity, aStructural integrity, absolute transparency in technical specs, and a relentless pursuit of engineering perfection without aesthetic combsolute transparency in technical specs, and a relentless pursuit of engineering perfection without aesthetic compromise.",
-      image: data
+      image: data3
     },
   ];
 

@@ -1,11 +1,19 @@
 /* Navbar links-ku */
+
+@font-face {
+  font-family: 'Bank Gothic Light';
+  /* ../ goes up to assets, then we enter bankgothic folder */
+  src: url('../bankgothic/Bank Gothic Light Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 .blog .text{
-   font-family: 'Michroma', sans-serif !important;
+   font-family: 'Bank Gothic Light', sans-serif !important;
     text-transform: uppercase;
 }
 
 .nav-item {
-    font-family: 'Michroma', sans-serif !important;
+    font-family: 'Bank Gothic Light', sans-serif !important;
     text-transform: uppercase;
 }
 
@@ -326,7 +334,7 @@
   position: fixed;
   top: 10px;
   left: 0;
-  height: 15%;
+  height: 180px;
   width: 100%;
   z-index: 1000;
   display: flex;
@@ -397,7 +405,7 @@
 
 /* Item Styling */
 .logo-main-img {
-  height: 180px;
+  height: 140px;
   width: auto;
 }
 .nav-links-list {
@@ -551,7 +559,7 @@
   position: fixed;
   left: 0;
   top:1px !important;
-  height: 18%!important;
+  height: 180px!important;
   width: 100%;
   z-index: 1000;
   display: flex;

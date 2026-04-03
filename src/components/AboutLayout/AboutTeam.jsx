@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import "./css/AboutTeam.css"
-import data from "../../assets/visionbackground.png"
+import data1 from "../../assets/per1.jpg"
+import data2 from "../../assets/per2.jpg"
+import data3 from "../../assets/per3.jpg"
+import data4 from "../../assets/per4.jpg"
 
 const TeamSection = () => {
   const team = [
-    { name: "ELIAS VANCE", role: "CHIEF OPERATIONS", img: data },
-    { name: "SARAH KOVAC", role: "HEAD OF DESIGN", img: data },
-    { name: "DAVID CHEN", role: "PRECISION LEAD", img: data },
-    { name: "ELENA MORETTI", role: "SYSTEMS DIRECTOR", img: data }
+    { name: "ELIAS VANCE", role: "CHIEF OPERATIONS", img: data1 },
+    { name: "SARAH KOVAC", role: "HEAD OF DESIGN", img: data2 },
+    { name: "DAVID CHEN", role: "PRECISION LEAD", img: data3 },
+    { name: "ELENA MORETTI", role: "SYSTEMS DIRECTOR", img: data4 }
   ];
 
   return (

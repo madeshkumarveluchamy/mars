@@ -54,7 +54,7 @@ const ServiceInfo = () => {
           {infoData.map((item, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-3  contact-info-col">
               <motion.div 
-                className="p-5 h-100 d-flex flex-column align-items-center align-items-md-start" // Center on mobile, left on desktop
+                className="p-5 h-100 d-flex flex-column text-center text-md-start" // Center on mobile, left on desktop
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
@@ -68,9 +68,11 @@ const ServiceInfo = () => {
                 <h3 className="contact-info-title text-uppercase mb-3">
                   {item.title} <br /> {item.subtitle}
                 </h3>
-                <p className="contact-info-details mb-4">
+                <div className='d-flex justify-content-center justify-content-md-start'>
+                <p className="contact-info-details mb-4 text-center text-md-start">
                   {item.details}
                 </p>
+                </div>
                 <div className="mt-auto">
                   <a href="#" className="contact-info-link text-uppercase fw-bold">
                     {item.linkText} <span className="ms-1">{item.linkSymbol}</span>

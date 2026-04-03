@@ -24,7 +24,7 @@ const Hero = () => {
           className="mars-text-bg"
         >
           {/* massively scaled MARS text */}
-          <h1 className="massive-text">MARS</h1>
+          <h1 className="massives-text">MARS</h1>
         </motion.div>
 
         {/* 3. Animated White Truck (In Front of Text) */}
@@ -57,7 +57,7 @@ const Hero = () => {
                 <img src="/heropagetruck.png" alt="Info Truck" className="info-thumb"/>
               </div>
               <div className="info-text-wrapper ps-3">
-                <p className="info-title mb-0 text-muted">YOUR ENERGY, OUR EXPERTISE</p>
+                <p className="infos-title mb-0 text-muted">YOUR ENERGY, OUR EXPERTISE</p>
                 <div className="info-arrow-bottom">→</div>
               </div>
             </div>

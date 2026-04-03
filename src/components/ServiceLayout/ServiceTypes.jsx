@@ -38,15 +38,16 @@ const ServiceTypes = () => {
                 transition={{ duration: 0.3 }}
               >
                 {/* Image Wrapper */}
-                <div className="portfolio-img-wrapper mb-3">
+                <div className="portfolio-img-wrapper mb-3 d-flex justify-content-center justify-content-md-start">
                   <img src={project.img} alt={project.title} className="img-fluid portfolio-img" />
                 </div>
                 
                 {/* Text Content */}
-                <h6 className="portfolio-card-title text-uppercase m-0">{project.title}</h6>
-                <p className="portfolio-card-desc text-muted mt-2 text-uppercase small">
+                <h6 className="portfolio-card-title text-uppercase m-0 d-flex justify-content-center justify-content-md-start">{project.title}</h6>
+                 <div className='d-flex justify-content-center justify-content-md-start text-center text-md-start'><p className="portfolio-card-desc text-muted mt-2 text-uppercase small ">
                   {project.desc}
                 </p>
+               </div>
               </motion>
             </div>
           ))}

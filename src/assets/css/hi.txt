@@ -12,6 +12,19 @@
     
 }
 
+@font-face {
+  font-family: 'Bank Gothic Light';
+  /* ../ goes up to assets, then we enter bankgothic folder */
+  src: url('../bankgothic/Bank Gothic Light Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.massives-text{
+  font-family: 'Bank Gothic Light', sans-serif !important;
+  text-transform: uppercase;
+
+}
+
 .is-scrolled{
     background-color:#0000 !important;
     transition:all 0.5s ease-in-out !important;

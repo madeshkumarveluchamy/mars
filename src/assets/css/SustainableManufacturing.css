@@ -137,7 +137,7 @@
 .sustainable-section {
   background-color: #ffffff;
   /* Top/Bottom hide aaguratha thadukka min-height mukkiyam */
-  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;

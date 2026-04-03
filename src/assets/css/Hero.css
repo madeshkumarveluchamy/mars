@@ -17,10 +17,25 @@
 }
 
 
+@font-face {
+  font-family: 'Bank Gothic Light';
+  /* ../ goes up to assets, then we enter bankgothic folder */
+  src: url('../bankgothic/Bank Gothic Light Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.massives-text{
+  font-family: 'Bank Gothic Light', sans-serif !important;
+  text-transform: uppercase;
+
+}
+
+
+
 .truck-img:hover{
   transform:scale(1.1);
 }
-.massive-text:hover{
+.massives-text:hover{
   transform:scale(1.1);
 }
 /* THE ARROW (Left to Right Slide) */
@@ -64,14 +79,14 @@
 .blog-swap-hero:hover{
   transform: scale(1.1);
 }
-.massive-text{
-  font-family: 'Michroma', sans-serif !important;
+.massives-text{
+  font-family: 'Bank Gothic Light', sans-serif !important;
   text-transform: uppercase;
-  text-shadow: 8px 0px 0px currentColor, -1px 0px 0px currentColor;
+  
 }
 
-.info-title{
-  font-family: 'Michroma', sans-serif !important;
+.infos-title{
+  font-family: 'Bank Gothic Light', sans-serif !important;
   text-transform: uppercase;
 }
 
@@ -135,13 +150,7 @@
     }
 }
 
-.hero-section{
-  position: relative;
-  width: 100%;
-  min-height:780px !important;
-  background: #000;
-  overflow: hidden;
-}
+
 
 /* Background Logic */
 .hero-bg-wrapper{
@@ -190,7 +199,7 @@
   font-weight: 900;
 }
 
-.massive-text {
+.massives-text {
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0px;
@@ -260,7 +269,7 @@
   flex: 1;
 }
 
-.info-title {
+.infos-title {
   margin: 0;
   font-size: 11px;
   font-weight: 900;
@@ -298,7 +307,7 @@
   width: 16px;
   filter: invert(1); /* If your arrow is black, makes it white */
 }
-.massive-text {
+.massives-text {
     /* clamp(min, preferred, max) - height and size scale fluid-ah aagum */
     font-size: clamp(6rem, 18vw, 18rem) !important; 
     line-height: 0.85; /* Text height-a innum compact-ah maatha */
@@ -322,8 +331,16 @@
   letter-spacing: 1px;
   border: 1px solid #000; /* Subtle border for definition */
 }
+
+    .hero-section{
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: #000;
+  overflow: hidden;
+}
 /* --- Global Transition Force (Add this first) --- */
-.massive-text {
+.massives-text {
   /* Smooth transition for ALL screen size changes */
   transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1) !important;
   will-change:
@@ -343,8 +360,8 @@
     bottom: 5% !important;
     margin-left:30px !important;
   }
-  .info-title {
-  font-size: 15px;
+  .infos-title {
+  font-size:25px;
 }
 .blog-swap-hero .arrow{
   font-size:30px ;
@@ -354,6 +371,13 @@
   align-items: end;
   height: 15vh;
   width: 40vw !important;
+}
+    .hero-section{
+  position: relative;
+  width: 100%;
+  height: 1100px;
+  background: #000;
+  overflow: hidden;
 }
 .blog-swap-hero{
   height:5vh !important;
@@ -371,20 +395,21 @@
   .truck-foreground {
      /* !important to force smooth override */
     /* Fluid width for better layout */
-    right: 5% !important;
+    right: -9% !important;
     top: 30% !important;
     width: 100% !important;
     height: 35% !important;
   }
   .truck-img {
+  max-width:1100px;
   width: 55%;
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
   }
   
-  .massive-text {
+  .massives-text {
     width: 45% !important;
-    font-size:10vw !important;
+    font-size:12vw !important;
     height:45%!important;
   }
   .mars-text-bg{
@@ -398,30 +423,38 @@
 }
 
 
-
 @media (max-width: 2560px) {
   .info-box-elite {
      height:110px !important;
   }
+      .hero-section{
+  position: relative;
+  width: 100%;
+  height: 1100px;
+  background: #000;
+  overflow: hidden;
+}
   
   .truck-foreground {
      /* !important to force smooth override */
     /* Fluid width for better layout */
-    right: 5% !important;
-    top: 25% !important;
-    width: 100% !important;
+   
+    left: 1vw !important;
+    top: 29% !important;
+ 
     height: 35% !important;
   }
   .truck-img {
-  width: 57%;
+  width: 50vw !important ;
+  max-width:1110px;
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
   }
   
-  .massive-text {
+  .massives-text {
     
     width: 40% !important;
-    font-size:10vw !important;
+    font-size:14vw !important;
   }
   .mars-text-bg{
     top:42%!important;
@@ -441,23 +474,81 @@
 }
 
 
+@media (max-width: 2000px) {
+  .info-box-elite {
+     height:110px !important;
+  }
+
+  
+  .truck-foreground {
+     /* !important to force smooth override */
+    /* Fluid width for better layout */
+    right: 39% !important;
+    top: 29% !important;
+ 
+    height: 35% !important;
+  }
+  .truck-img {
+  width: 50vw!important;
+  max-width:1110px;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.8));
+  }
+  
+  .massives-text {
+    
+    width: 40% !important;
+    font-size:14vw !important;
+  }
+  .mars-text-bg{
+    top:38%!important;
+    left:54% !important;
+    bottom:56%!important;
+    width:45%!important;
+    height:45% !important;
+  }
+
+    .hero-section{
+  position: relative;
+  width: 100%;
+  height: 780px !important;
+  background: #000;
+  overflow: hidden;
+}
+  .info-arrow-bottom {
+  position: absolute;
+  right: 2px;
+  top:55px !important;
+  font-size: 40px;
+  font-weight: bold;
+}
+}
+
+
 /* Large Desktop */
 @media (max-width: 1440px) {
   .info-box-elite {
     bottom: 5% !important;
     height:120px !important;
   }
+  .hero-section{
+  position: relative;
+  width: 100%;
+  height: 800px !important;
+  background: #000;
+  overflow: hidden;
+}
   
   .truck-foreground { /* !important to force smooth override */
     /* Fluid width for better layout */
     right: 8% !important;
-    top: 32% !important;
+    top: 30% !important;
     width: 95% !important;
     height: 5% !important;
   }
-  .massive-text {
+  .massives-text {
     width: 35% !important;
-    font-size:10vw !important;
+    font-size:14vw !important;
   }
   .mars-text-bg{
    top:44% !important;
@@ -472,7 +563,7 @@
   font-size: 30px;
   font-weight: bold;
 }
-.info-title{
+.infos-title{
   font-size:10px !important;
 }
 
@@ -493,7 +584,7 @@
     width: 95% !important;
     height: 5% !important;
   }
-  .massive-text {
+  .massives-text {
     width: 35% !important;
     font-size:10vw !important;
     width:40% !important;
@@ -531,7 +622,7 @@
   font-size: 30px;
   font-weight: bold;
 }
-.info-title{
+.infos-title{
   font-size:8px!important;
 }
   .truck-foreground {
@@ -550,7 +641,7 @@
     gap: 10px !important;
     width:20vw !important;
   }
-  .massive-text {
+  .massives-text {
     width: 50% !important;
     font-size:16vw !important;
     
@@ -599,7 +690,7 @@
     
   }
   
-   .massive-text {
+   .massives-text {
     width: 50% !important;
     font-size:17vw !important;
     
@@ -629,7 +720,7 @@
   font-size: 30px;
   font-weight: bold;
 }
-.info-title{
+.infos-title{
   font-size:7px  !important;
 }
 .info-box-elite {
@@ -665,7 +756,7 @@
     
   }
   
-   .massive-text {
+   .massives-text {
     width: 50% !important;
     font-size:21vw !important;
     
@@ -715,7 +806,7 @@
 }
 
 @media(max-width:320){
-  .massive-text{
+  .massives-text{
     font-size:33vw !important;
   }
 }

@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 
 import "./css/MainGallery.css";
 
-import img1 from "../../assets/servicebuilds1.png"; 
+
+import img1 from "../../assets/alloy.jpg"; 
 import img2 from "../../assets/servicebuilds2.png"; 
-import img3 from "../../assets/servicebuilds1.png"; 
+import img3 from "../../assets/checks.jpg"; 
 
 
 const MainGallery = () => {

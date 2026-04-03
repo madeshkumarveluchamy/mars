@@ -3,18 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './css/GalleryCategories.css';
 
 // Asset Imports
-import hd1 from '../../assets/capabilities1.png';
-import hd2 from '../../assets/capabilities2.png';
-import hd3 from '../../assets/capabilities3.png';
-import spec1 from '../../assets/servicebuilds1.png';
-import spec2 from '../../assets/servicebuilds2.png';
-import spec3 from '../../assets/servicebuilds3.png';
-import fab1 from '../../assets/capabilities1.png';
-import fab2 from '../../assets/capabilities2.png';
-import fab3 from '../../assets/capabilities3.png';
-import rd1 from '../../assets/servicebuilds1.png';
-import rd2 from '../../assets/servicebuilds2.png';
-import rd3 from '../../assets/servicebuilds3.png';
+import hd2 from '../../assets/im1.jpg';
+import hd3 from '../../assets/im2.jpg';
+import hd1 from '../../assets/im3.jpg';
+import spec1 from '../../assets/im4.jpg';
+import spec2 from '../../assets/im5.jpg';
+import spec3 from '../../assets/im6.jpg';
+import fab1 from '../../assets/im7.jpg';
+import fab2 from '../../assets/im8.jpg';
+import fab3 from '../../assets/im9.jpg';
+import rd1 from '../../assets/im10.jpg';
+import rd2 from '../../assets/im11.jpg';
+import rd3 from '../../assets/im12.jpg';
+
 
 export const galleryItems = [
   { id: 1, category: "HEAVYDUTY", title: "32-Ton Tipper", img: hd1, desc: "Mining Grade Hydraulics" },

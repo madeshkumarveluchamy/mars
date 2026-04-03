@@ -15,17 +15,17 @@ const ContactHero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h6 className="text-orange fw-bold tracking-widest mb-3 text-uppercase">
+              <h6 className="text-orange fw-bold tracking-widest mb-3 text-uppercase text-center text-md-start">
                 Direct Engineering Access
               </h6>
               
-              <h1 className="contact-title text-white text-uppercase m-0">
+              <h1 className="contact-title text-white text-uppercase m-0  text-center text-md-start">
                 Let's Build The <br />
                 <span className="text-orange-title">Future</span> of <br />
                 Transport
               </h1>
 
-              <p className="contact-subtext text-secondary mt-4">
+              <p className="contact-subtext text-secondary mt-4  text-center text-md-start">
                 Reach out to our engineering team for custom vehicle solutions and 
                 fleet consultations. Our workshop is ready for your specifications.
               </p>

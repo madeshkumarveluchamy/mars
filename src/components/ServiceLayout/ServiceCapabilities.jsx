@@ -60,7 +60,7 @@ const ServiceCapabilities = () => {
               <p className="cap-description text-secondary mt-4">
                 Rigorous vibration testing and stress-loading protocols. All fabrication is performed under ISO 9001:2015 standards with certified non-destructive testing (NDT) on all critical welds.
               </p>
-              <div className="m-4 text-center text-md-start d-flex">
+              <div className="m-4  d-flex justify-content-center justify-content-md-start">
                 <span className="badge-dark text-uppercase me-4">ISO 9001</span>
                 <span className="badge-dark text-uppercase">ASME Certified</span>
               </div>
